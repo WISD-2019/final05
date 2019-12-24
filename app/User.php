@@ -35,5 +35,17 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-    ];
+        ];
+
+    // 取得該使用者的所有訂餐。
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    // 取得該使用者的所有訂位。
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class);
+    }
 }
