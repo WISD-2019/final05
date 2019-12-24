@@ -11,12 +11,12 @@
         <div class="mx-auto text-center" >
             <h3 class="display-1 mx-auto my-0 text-white"> Honey Cofe </h3>
             <h3 class="text-primary mx-auto mt-2 mb-5">想要來一杯香濃的咖啡嗎？事不宜遲立刻點擊下方進行挑選</h3>
-            <a href="#projects" class="btn btn-primary js-scroll-trigger ">查看產品</a>
+            <a href="{{ route('product.index') }}" class="btn btn-primary js-scroll-trigger ">查看產品</a>
         </div>
     </div>
 </header>
 
-<!-- 標頭 news 的下拉式方塊 -->
+<!-- 標頭 news 的移動模塊 -->
 <!-- news Section -->
 <section id="news" class="about-section text-left carousel slide" data-ride="carousel" style="background: #290e05">
     <div class="container">
@@ -30,32 +30,32 @@
                     <li data-target="#news" data-slide-to="2"></li>
                 </ul>
 
-                <!-- 轮播图片 -->
+                <!-- 輪播圖片 -->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
                         <div class="carousel-caption">
-                            <h3>第一张图片描述标题</h3>
+                            <h3>第一張圖片描述標題</h3>
                             <p>描述文字!</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="{{asset("img/sweet.png")}}">
                         <div class="carousel-caption">
-                            <h3>第二张图片描述标题</h3>
+                            <h3>第二張圖片描述標題</h3>
                             <p>描述文字!</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{asset("img/images.png")}}">
+                        <img src="{{asset("img/cup.jpg")}}">
                         <div class="carousel-caption">
-                            <h3>第三张图片描述标题</h3>
+                            <h3>第三章圖片描述標題</h3>
                             <p>描述文字!</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 左右切换按钮 -->
+                <!-- 左右切換按紐 -->
                 <a class="carousel-control-prev" href="#news" data-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                 </a>
@@ -75,12 +75,12 @@
         <!-- Featured Project Row -->
         <div class="row align-items-center no-gutters mb-4 mb-lg-5">
             <div class="col-xl-8 col-lg-7">
-                <img class="img-fluid mb-3 mb-lg-0" src="{{asset("img/bgcofe.jpg")}}" alt="">
+                <img class="img-fluid mb-3 mb-lg-0" src="{{asset("img/焦糖瑪奇朵.jpg")}}" alt="">
             </div>
             <div class="col-xl-4 col-lg-5">
                 <div class="featured-text text-center text-white text-lg-left">
                     <h4>熱門產品</h4>
-                    <p class="text-white-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                    <p class="text-white-50 mb-0">焦糖瑪奇朵</p>
                 </div>
             </div>
         </div>
@@ -88,14 +88,14 @@
         <!-- Project One Row -->
         <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
             <div class="col-lg-6">
-                <img class="img-fluid" src="{{asset("img/demo-image-01.jpg")}}" alt="">
+                <img class="img-fluid" src="{{asset("img/卡布奇諾.jpg")}}" alt="">
             </div>
             <div class="col-lg-6">
                 <div class="bg-black text-center h-100 project">
                     <div class="d-flex h-100">
                         <div class="project-text w-100 my-auto text-center text-lg-left">
-                            <h4 class="text-white">Misty</h4>
-                            <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                            <h4 class="text-white">主力推薦</h4>
+                            <p class="mb-0 text-white-50">卡布奇諾</p>
                             <hr class="d-none d-lg-block mb-0 ml-0">
                         </div>
                     </div>
@@ -106,14 +106,14 @@
         <!-- Project Two Row -->
         <div class="row justify-content-center no-gutters">
             <div class="col-lg-6">
-                <img class="img-fluid" src="{{asset("img/demo-image-02.jpg")}}" alt="">
+                <img class="img-fluid" src="{{asset("img/烤布雷.jpg")}}" alt="">
             </div>
             <div class="col-lg-6 order-lg-first">
                 <div class="bg-black text-center h-100 project">
                     <div class="d-flex h-100">
                         <div class="project-text w-100 my-auto text-center text-lg-right">
-                            <h4 class="text-white">Mountains</h4>
-                            <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
+                            <h4 class="text-white">午後甜點</h4>
+                            <p class="mb-0 text-white-50">烤布雷</p>
                             <hr class="d-none d-lg-block mb-0 mr-0">
                         </div>
                     </div>
