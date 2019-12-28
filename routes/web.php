@@ -30,6 +30,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'admin'], function() {
     Route::get('/', ['as' => 'admin.dashboard.index', 'uses' => 'AdminDashboardController@index']);
 
+    Route::get('users'          , ['as' => 'admin.posts.index' , 'uses' => 'UsersController@index']);
+    Route::get('users/create'   , ['as' => 'admin.posts.create', 'uses' => 'UsersController@create']);
     
 
 });
