@@ -15,7 +15,10 @@ class UsersController extends Controller
     public function index()
     {
         //
-        
+        $users=Users::where('id','>'0)->orderBy('name','DESC')->get();
+        foreach($users as $post)
+        dd($post);
+        return view('admin.posts.index',['users'=>$users]);
     }
 
     /**
@@ -26,7 +29,7 @@ class UsersController extends Controller
     public function create()
     {
         //
-
+        return view('admin.posts.create');
     }
 
 
@@ -37,9 +40,10 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request$request)
     {
-
+        users::create($request->all());
+        return redirect()->route('admin.posts.index');
     }
 
     /**
@@ -48,7 +52,7 @@ class UsersController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Users $users)
     {
         //
     }
@@ -59,9 +63,11 @@ class UsersController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-
+        $users=users::find($id);
+        $data=['users'=>$users];
+        return view('admin.posts.edit',$data);
     }
 
     /**
@@ -71,9 +77,11 @@ class UsersController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update(Request$request,$id)
     {
-
+        $users=users::find($id);
+        $users->update($request->all());
+        return redirect()->route('admin.posts.index');
     }
 
     /**
@@ -82,8 +90,9 @@ class UsersController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy($id)
     {
-
+        Post::destroy($id);
+        return redirect()->route('admin.posts.index');
     }
 }
