@@ -26,3 +26,10 @@ Route::get('/contect',['as'=>'contect.index','uses'=> 'ContectController@index']
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('/', ['as' => 'admin.dashboard.index', 'uses' => 'AdminDashboardController@index']);
+
+    
+
+});
