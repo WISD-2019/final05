@@ -15,10 +15,9 @@ class UsersController extends Controller
     public function index()
     {
         //
-        $users=Users::where('id','>'0)->orderBy('name','DESC')->get();
-        foreach($users as $post)
-        dd($post);
-        return view('admin.posts.index',['users'=>$users]);
+        $users=Users::orderBy('id','ASC')->get();
+        $data=['users'=>$users];
+        return View('admin.posts.index',$data);
     }
 
     /**
