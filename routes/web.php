@@ -32,6 +32,7 @@ Route::group(['prefix' => 'admin'], function() {
 
     Route::get('users'          , ['as' => 'admin.posts.index' , 'uses' => 'UsersController@index']);
     Route::get('users/create'   , ['as' => 'admin.posts.create', 'uses' => 'UsersController@create']);
+    Route::get('users/{id}/edit', ['as' => 'admin.posts.edit'  , 'uses' => 'UsersController@edit']);
     
 
 });
