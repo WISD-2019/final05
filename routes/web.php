@@ -11,18 +11,28 @@
 |
 */
 
+
+//前台
+
 Route::get('/', function () {
+
     return view('coffee');
+
 });
 
-Route::get('/news',['as'=>'news.index','uses'=> 'NewsController@index']);
-
-Route::get('/products',['as'=>'product.index','uses'=> 'ProductController@index']);
-
-Route::get('/about',['as'=>'about.index','uses'=> 'AboutController@index']);
-
-Route::get('/contect',['as'=>'contect.index','uses'=> 'ContectController@index']);
-
 Auth::routes();
-
+/*首頁*/
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*公告路由*/
+Route::get('/news',['as'=>'news.index','uses'=> 'CofeController@news']);
+/*咖啡產品路由*/
+Route::get('/products',['as'=>'product.index','uses'=> 'CofeController@product']);
+/*其他產品路由*/
+Route::get('/other',['as'=>'other.index','uses'=> 'CofeController@other']);
+/*關於我們(簡介)路由*/
+Route::get('/about',['as'=>'about.index','uses'=> 'CofeController@about']);
+/*聯絡我們路由*/
+Route::get('/contect',['as'=>'contect.index','uses'=> 'CofeController@contect']);
+
+//後台
