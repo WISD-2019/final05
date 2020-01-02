@@ -35,4 +35,12 @@ Route::get('/about',['as'=>'about.index','uses'=> 'CofeController@about']);
 /*聯絡我們路由*/
 Route::get('/contect',['as'=>'contect.index','uses'=> 'CofeController@contect']);
 
+//會員
+
+/*我的訂餐路由*/
+Route::get('/myorder',['as'=>'myorder.index','uses'=> 'OrderController@myorder']);
+/*我的訂位路由*/
+Route::get('/myreservation',['as'=>'myreservation.index','uses'=> 'ReservationController@myreservation']);
+
+
 //後台

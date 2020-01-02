@@ -17,6 +17,23 @@ class ReservationController extends Controller
         //
     }
 
+    //連結我的訂位頁面
+    public function myreservation()
+    {
+        return view('myreservation.index');
+    }
+
+    /**
+     * 建立一個新的控制器實例。
+     *
+     * @return void
+     */
+    //增加 middleware 的方法，用以呼叫名稱為 auth 的中介層程式，以檢查使用者的認證
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
