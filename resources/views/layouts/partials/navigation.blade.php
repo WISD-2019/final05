@@ -78,16 +78,21 @@
             Menu
             <i class="fas fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item" >
-                    <a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#news">活動公告</a>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"" href="{{ route('contect.index') }}">關於我們</a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="{{ route('contect.index') }}">最新公告</a>
+                            <a href="{{ route('about.index') }}">簡介</a>
                         </li>
+                    </ul>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#news">最新公告</a>
+                    <ul class="dropdown-menu">
                         <li>
-                            <a href="{{ route('contect.index') }}">公告</a>
+                            <a href="{{ route('news.index') }}">活動公告</a>
                         </li>
                     </ul>
                 </li>
@@ -95,23 +100,18 @@
                     <a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#projects">產品介紹</a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="{{ route('contect.index') }}">咖啡</a>
+                            <a href="{{ route('product.index') }}">咖啡系列</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('other.index') }}">其他產品</a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"" href="{{ route('contect.index') }}">關於我們</a>
+                    <a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#contect">聯絡我們</a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="{{ route('contect.index') }}">環境介紹</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger dropdown-toggle" data- toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"" href="#contect">聯絡我們</a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="{{ route('contect.index') }}">地址</a>
+                            <a href="{{ route('contect.index') }}">聯絡資訊</a>
                         </li>
                     </ul>
                 </li>
@@ -119,7 +119,27 @@
                     <div class="top-right links">
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="{{ url('/home') }}">首頁</a>
+                                <a class="nav-link js-scroll-trigger" href="{{ route('myorder.index') }}">我的訂餐</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link js-scroll-trigger" href="{{ route('myreservation.index') }}">我的訂位</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item " href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('登出') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
                             </li>
                         @else
                             <li class="nav-item">
