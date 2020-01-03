@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{ route('admin.dashboard.index') }}">管理後台</a>
+        <a class="navbar-brand" href="{{ route('admin.dashboard.index') }}">後台管理</a>
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
@@ -39,6 +39,9 @@
             </li>
             <li>
                 <a href="{{ route('admin.posts.index') }}"><i class="fa fa-fw fa-edit"></i> 管理員管理</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.product.index') }}"><i class="fa fa-fw fa-edit"></i> 產品管理</a>
             </li>
         </ul>
     </div>

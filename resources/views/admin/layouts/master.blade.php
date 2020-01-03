@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>@yield('title') | 管理員</title>
+    <title>後台管理 | @yield('title')</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('css/css/bootstrap.min.css') }}" rel="stylesheet">
