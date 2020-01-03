@@ -36,11 +36,14 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('users/{id}/edit', ['as' => 'admin.posts.edit'  , 'uses' => 'UsersController@edit']);
     Route::post('users',['as'=>'admin.posts.store','uses'=> 'UsersController@store']);
     Route::patch('users/{id}'   , ['as' => 'admin.posts.update', 'uses' => 'UsersController@update']);
-    
+    Route::delete('users/{id}',['as'=>'admin.posts.destroy','uses'=>'UsersController@destroy']);
 
 
     Route::get('product'          , ['as' => 'admin.product.index' , 'uses' => 'ProductsController@index']);
     Route::get('product/create'   , ['as' => 'admin.product.create', 'uses' => 'ProductsController@create']);
-
+    Route::get('product/{id}/edit', ['as' => 'admin.product.edit'  , 'uses' => 'ProductsController@edit']);
+    Route::post('product',['as'=>'admin.product.store','uses'=> 'ProductsController@store']);
+    Route::patch('product/{id}'   , ['as' => 'admin.product.update', 'uses' => 'ProductsController@update']);
+    
 
 });
