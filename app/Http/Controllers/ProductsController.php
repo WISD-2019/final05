@@ -62,9 +62,11 @@ class ProductsController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-
+        $products=products::find($id);
+        $data=['products'=>$products];
+        return view('admin.product.edit',$data);
     }
 
     /**
@@ -74,9 +76,11 @@ class ProductsController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update(Request$request,$id)
     {
-
+        $products=products::find($id);
+        $products->update($request->all());
+        return redirect()->route('admin.product.index');
     }
 
     /**
@@ -85,8 +89,9 @@ class ProductsController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy($id)
     {
-
+        products::destroy($id);
+        return redirect()->route('admin.product.index');
     }
 }
