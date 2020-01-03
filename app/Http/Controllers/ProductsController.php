@@ -15,7 +15,9 @@ class ProductsController extends Controller
     public function index()
     {
         //
-
+        $products=Products::orderBy('id','ASC')->get();
+        $data=['products'=>$products];
+        return View('admin.product.index',$data);
     }
 
     /**
@@ -26,7 +28,7 @@ class ProductsController extends Controller
     public function create()
     {
         //
-
+        return view('admin.product.create');
     }
 
 
@@ -37,9 +39,10 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request$request)
     {
-
+        products::create($request->all());
+        return redirect()->route('admin.product.index');
     }
 
     /**
@@ -84,6 +87,6 @@ class ProductsController extends Controller
      */
     public function destroy()
     {
-        
+
     }
 }
