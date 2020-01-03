@@ -27,12 +27,20 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Route::group(['prefix' => 'admin'], function() {
     Route::get('/', ['as' => 'admin.dashboard.index', 'uses' => 'AdminDashboardController@index']);
 
     Route::get('users'          , ['as' => 'admin.posts.index' , 'uses' => 'UsersController@index']);
     Route::get('users/create'   , ['as' => 'admin.posts.create', 'uses' => 'UsersController@create']);
     Route::get('users/{id}/edit', ['as' => 'admin.posts.edit'  , 'uses' => 'UsersController@edit']);
+    Route::post('users',['as'=>'admin.posts.store','uses'=> 'UsersController@store']);
+    Route::patch('users/{id}'   , ['as' => 'admin.posts.update', 'uses' => 'UsersController@update']);
     
+
+
+    Route::get('product'          , ['as' => 'admin.product.index' , 'uses' => 'ProductsController@index']);
+    Route::get('product/create'   , ['as' => 'admin.product.create', 'uses' => 'ProductsController@create']);
+
 
 });
