@@ -29,7 +29,18 @@
             </div>
 
             <div class="form-group">
-                <label>手機：</label>
+                <label>職稱：</label>
+                    <select name="type">
+                        <option value=" "> </option>
+                        　<option value="管理員">管理員</option>
+                        　<option value="員工">員工</option>
+                        　<option value="會員">會員</option>
+                    </select>
+
+            </div>
+
+            <div class="form-group">
+                <label>手機號碼：</label>
                 <input name="phone" class="form-control" placeholder="0912345678">
             </div>
 
