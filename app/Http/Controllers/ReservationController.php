@@ -18,9 +18,13 @@ class ReservationController extends Controller
     }
 
     //連結我的訂位頁面
-    public function myreservation()
+    public function myreservation(Request $request)
     {
-        return view('myreservation.index');
+        //顯示已有的訂位
+        //由 DB 擷取使用者所有訂位
+        $reservations = Reservation::where('user_id', $request->user()->id)->get();
+        $data=['reservations'=>$reservations];
+        return view('member.myreservation.index', $data);
     }
 
     /**
@@ -41,7 +45,7 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -50,6 +54,7 @@ class ReservationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
         //
@@ -72,7 +77,8 @@ class ReservationController extends Controller
      * @param  \App\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reservation $reservation)
+
+    public function edit($id)
     {
         //
     }
@@ -84,7 +90,8 @@ class ReservationController extends Controller
      * @param  \App\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reservation $reservation)
+
+    public function update(Request $request,$id)
     {
         //
     }
@@ -95,8 +102,10 @@ class ReservationController extends Controller
      * @param  \App\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reservation $reservation)
+
+    public function destroy($id)
     {
         //
     }
+
 }

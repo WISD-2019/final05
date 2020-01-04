@@ -38,9 +38,8 @@ Route::get('/contect',['as'=>'contect.index','uses'=> 'CofeController@contect'])
 //會員
 
 /*我的訂餐路由*/
-Route::get('/myorder',['as'=>'myorder.index','uses'=> 'OrderController@myorder']);
-/*我的訂位路由*/
-Route::get('/myreservation',['as'=>'myreservation.index','uses'=> 'ReservationController@myreservation']);
-
+Route::group(['prefix' => 'myorder'], function() {
+    Route::get('/',['as'=>'member.myorder.index','uses'=> 'OrderController@myorder']);
+});
 
 //後台
