@@ -66,6 +66,37 @@
                                     <!-- 編輯資料 -->
                                     <a href="{{ route('member.myreservation.edit',$reservation->id) }}">編輯</a>
                                 </td>
+                                <td style="text-align: center">
+                                    <button type="button" class="text-primary" data-toggle="modal" data-target="#myModal">刪除</button>
+                                    <!-- 模態框 -->
+                                    <div class="modal fade" id="myModal">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <!-- 模態框頭部 -->
+                                                <div class="modal-header">
+                                                    <h6 class="modal-title">確認取消</h6>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <!-- 模態框主體 -->
+                                                <div class="modal-body">
+                                                    <h5>您是否要取消該筆訂位？</h5>
+                                                </div>
+                                                <!-- 模態框底部 -->
+                                                <div class="modal-footer">
+                                                    <!-- 刪除資料 -->
+                                                    <form action="/myreservation/{{ $reservation->id }}" method="POST">
+                                                        {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
+                                                        <input type="hidden" name="_method" value="DELETE">
+
+                                                        <button class="btn btn-primary">確定</button>
+                                                    </form>
+                                                    <button class="btn btn-primary" data-dismiss="modal">取消</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
