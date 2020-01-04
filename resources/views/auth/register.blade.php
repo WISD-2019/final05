@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('註冊') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -40,13 +40,27 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('電話') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" required autocomplete="phone">
+
+                                @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('密碼') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
