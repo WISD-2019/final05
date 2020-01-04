@@ -45,7 +45,7 @@ class ReservationController extends Controller
      */
     public function create()
     {
-
+        return view('member.myreservation.create');
     }
 
     /**
@@ -85,10 +85,12 @@ class ReservationController extends Controller
      * @param  \App\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-
+    //在 ReservationController 的 edit 內取得舊資料
     public function edit($id)
     {
-        //
+        $reservations = Reservation::find($id);
+        $data = ['reservation' => $reservations];
+        return view('member.myreservation.edit', $data);
     }
 
     /**
@@ -98,10 +100,12 @@ class ReservationController extends Controller
      * @param  \App\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-
+    //在 ReservationController 的 update 內更新資料
     public function update(Request $request,$id)
     {
-        //
+        $reservations = Reservation::find($id);
+        $reservations->update($request->all());
+        return redirect()->route('member.myreservation.index');
     }
 
     /**
@@ -113,7 +117,7 @@ class ReservationController extends Controller
 
     public function destroy($id)
     {
-        //
+
     }
 
 }

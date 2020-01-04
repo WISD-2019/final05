@@ -37,13 +37,17 @@ Route::get('/contect',['as'=>'contect.index','uses'=> 'CofeController@contect'])
 
 //會員
 
-/*我的訂餐路由*/
-Route::group(['prefix' => 'myorder'], function() {
-    Route::get('/',['as'=>'member.myorder.index','uses'=> 'OrderController@myorder']);
-    //新增訂餐路由
-    Route::get('/create'   , ['as' => 'member.myorder.create', 'uses' => 'OrderController@create']);
-    //儲存訂餐路由
-    Route::post('/'         , ['as' => 'member.myorder.store' , 'uses' => 'OrderController@store']);
+/*我的訂位路由*/
+Route::group(['prefix' => 'myreservation'], function() {
+    Route::get('/'         , ['as' => 'member.myreservation.index'  , 'uses' => 'ReservationController@myreservation']);
+    //新增訂位路由
+    Route::get('/create'   , ['as' => 'member.myreservation.create' , 'uses' => 'ReservationController@create']);
+    //編輯訂位路由
+    Route::get('/{id}/edit', ['as' => 'member.myreservation.edit'   , 'uses' => 'ReservationController@edit']);
+    //儲存訂位路由
+    Route::post('/'        , ['as' => 'member.myreservation.store'  , 'uses' => 'ReservationController@store']);
+    //設定更新訂位路由
+    Route::patch('/{id}'   , ['as' => 'member.myreservation.update' , 'uses' => 'ReservationController@update']);
 });
 
 //後台
