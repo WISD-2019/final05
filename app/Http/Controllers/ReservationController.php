@@ -21,7 +21,7 @@ class ReservationController extends Controller
     public function myreservation(Request $request)
     {
         //顯示已有的訂位
-        //由 DB 擷取使用者所有訂位
+        //由 DB 擷取使用者所有任務
         $reservations = Reservation::where('user_id', $request->user()->id)->get();
         $data=['reservations'=>$reservations];
         return view('member.myreservation.index', $data);
@@ -54,10 +54,18 @@ class ReservationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-
+    //設定 ReservationController 對應的 function
+    //將表單送過來的資料用 Model 寫入資料庫
     public function store(Request $request)
     {
-        //
+        $request->user()->reservations()->create([
+            'bookdate' => $request -> bookdate,
+            'booktime' => $request -> booktime,
+            'count' => $request -> count,
+            'remark' => $request -> remark
+        ]);
+        //設定頁面跳轉
+        return redirect()->route('member.myreservation.index');
     }
 
     /**

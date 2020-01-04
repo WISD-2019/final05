@@ -40,6 +40,10 @@ Route::get('/contect',['as'=>'contect.index','uses'=> 'CofeController@contect'])
 /*我的訂餐路由*/
 Route::group(['prefix' => 'myorder'], function() {
     Route::get('/',['as'=>'member.myorder.index','uses'=> 'OrderController@myorder']);
+    //新增訂餐路由
+    Route::get('/create'   , ['as' => 'member.myorder.create', 'uses' => 'OrderController@create']);
+    //儲存訂餐路由
+    Route::post('/'         , ['as' => 'member.myorder.store' , 'uses' => 'OrderController@store']);
 });
 
 //後台
