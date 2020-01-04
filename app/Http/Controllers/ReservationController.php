@@ -114,10 +114,11 @@ class ReservationController extends Controller
      * @param  \App\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-
+    //在 ReservationController 的 destroy 內刪除資料
     public function destroy($id)
     {
-
+        Reservation::destroy($id);
+        return redirect()->route('member.myreservation.index');
     }
 
 }

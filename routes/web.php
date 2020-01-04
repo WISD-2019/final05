@@ -48,6 +48,8 @@ Route::group(['prefix' => 'myreservation'], function() {
     Route::post('/'        , ['as' => 'member.myreservation.store'  , 'uses' => 'ReservationController@store']);
     //設定更新訂位路由
     Route::patch('/{id}'   , ['as' => 'member.myreservation.update' , 'uses' => 'ReservationController@update']);
+    //設定刪除訂位路由
+    Route::delete('/{id}'  , ['as' => 'member.myreservation.destroy', 'uses' => 'ReservationController@destroy']);
 });
 
 //後台
