@@ -1,20 +1,20 @@
-@extends('admin.layouts.master')
+@extends('staff.layouts.master')
 
-@section('title', '後台管理')
+@section('title', '員工管理')
 
 @section('content')
 <!-- Page Heading -->
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">
-            後台管理 <small></small>
+            員工管理 <small></small>
         </h1>
         <ol class="breadcrumb">
             <li class="active">
-                <i class="fa fa-dashboard"></i> 後台管理
-                <i class="fa fa-dashboard"></i> <a href="{{route('admin.posts.index')}}">管理員管理</a>
-                <i class="fa fa-dashboard"></i> <a href="{{route('admin.product.index')}}">產品管理</a>
-                <i class="fa fa-dashboard"></i> <a href="{{route('admin.dashboard.search')}}">查詢</a>
+                <i class="fa fa-dashboard"></i> 員工管理
+                <i class="fa fa-dashboard"></i> <a href="{{route('staff.reservation.index')}}">訂位管理</a>
+                <i class="fa fa-dashboard"></i> <a href="{{route('staff.order.index')}}">訂餐管理</a>
+                <i class="fa fa-dashboard"></i> <a href="{{route('staff.dashboard.search')}}">查詢</a>
             </li>
         </ol>
 
