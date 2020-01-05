@@ -50,11 +50,9 @@
                         <td>{{$book->time}}</td>
                         <td>
                             <a href="{{route('staff.reservation.edit',$book->id)}}">編輯</a>/
-                            <form action="{{ route('staff.reservation.edit', $book->id) }}" method="POST">
-                                {{ csrf_field() }}
-                                {{ method_field('DELETE') }}
-                                <button type="submit" class="btn btn-success">刪除</button>
-                            </form>
+                                    <a href="reservation/{{ $book->id }}">
+                                        <button type="submit" class="btn btn-success">查看</button>
+                                    </a>
                         </td>
                     </tr>
                 @endforeach

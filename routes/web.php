@@ -104,6 +104,8 @@ Route::group(['prefix' => 'staff'], function() {
     Route::post('reservation'         , ['as' =>'staff.reservation.store'  , 'uses' => 'StaffreservationController@store']);
     //員工更新訂位路由
     Route::patch('reservation/{id}'   , ['as' => 'staff.reservation.update', 'uses' => 'StaffreservationController@update']);
+    //員工查看訂位
+    Route::get('/reservation/{reservations}', 'StaffreservationController@show')->name('staff.reservation.detail');
 
 
     //員工訂餐路由

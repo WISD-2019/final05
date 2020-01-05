@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Reservation;
+use App\Users;
 
 use Illuminate\Http\Request;
 
@@ -56,9 +57,12 @@ class StaffreservationController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function show(Reservation $reservations)
+    public function show($id)
     {
         //
+        $reservations = Reservation::find($id);
+        return view('staff.reservation.detail', compact('reservations'));
+
     }
 
     /**
