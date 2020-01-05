@@ -14,7 +14,6 @@
                 <i class="fa fa-dashboard"></i> 員工管理
                 <i class="fa fa-dashboard"></i> <a href="{{route('staff.reservation.index')}}">訂位管理</a>
                 <i class="fa fa-dashboard"></i> <a href="{{route('staff.order.index')}}">訂餐管理</a>
-                <i class="fa fa-dashboard"></i> <a href="{{route('staff.dashboard.search')}}">查詢</a>
             </li>
         </ol>
 
