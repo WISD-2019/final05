@@ -33,7 +33,7 @@ class StaffreservationController extends Controller
     public function create()
     {
         //
-        
+        return view('staff.reservation.create');
     }
 
 
