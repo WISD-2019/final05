@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Users;
+
 use Illuminate\Http\Request;
+
+use App\Http\Requests;
+
+use App\Http\Requests\PostRequest;
 
 class UsersController extends Controller
 {
@@ -39,7 +44,7 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request$request)
+    public function store(Request $request)
     {
         users::create($request->all());
         return redirect()->route('admin.posts.index');
@@ -76,7 +81,7 @@ class UsersController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function update(Request$request,$id)
+    public function update(Request $request,$id)
     {
         $users=users::find($id);
         $users->update($request->all());
@@ -91,7 +96,7 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        Post::destroy($id);
+        Users::destroy($id);
         return redirect()->route('admin.posts.index');
     }
 }
