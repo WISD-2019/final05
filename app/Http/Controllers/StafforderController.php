@@ -56,9 +56,11 @@ class StafforderController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $orders)
+    public function show($id)
     {
         //
+        $orders = Order::find($id);
+        return view('staff.order.detail', compact('orders'));
     }
 
     /**

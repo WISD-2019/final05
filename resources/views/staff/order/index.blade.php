@@ -47,11 +47,9 @@
                     <td>
                     <a href="{{route('staff.order.edit',$order->id)}}">編輯</a>
                     /
-                    <form action="{{ route('staff.order.edit', $order->id) }}" method="POST">
-                        {{ csrf_field() }}
-                        {{ method_field('DELETE') }}
-                        <button type="submit" class="btn btn-success">刪除</button>
-                    </form>
+                        <a href="order/{{ $order->id }}">
+                            <button type="submit" class="btn btn-success">查看</button>
+                        </a>
                     </td>
                     </tr>
                 @endforeach
