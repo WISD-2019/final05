@@ -67,9 +67,11 @@ class StafforderController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-
+        $orders=Order::find($id);
+        $data=['orders'=>$orders];
+        return view('staff.order.edit',$data);
     }
 
     /**
@@ -79,9 +81,11 @@ class StafforderController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update(Request $request,$id)
     {
-
+        $orders=Order::find($id);
+        $orders->update($request->all());
+        return redirect()->route('staff.order.index');
     }
 
     /**
@@ -92,6 +96,7 @@ class StafforderController extends Controller
      */
     public function destroy($id)
     {
-
+        Order::destroy($id);
+        return redirect()->route('staff.order.index');
     }
 }
