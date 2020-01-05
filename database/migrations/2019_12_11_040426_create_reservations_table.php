@@ -19,7 +19,7 @@ class CreateReservationsTable extends Migration
             $table->date('bookdate');
             $table->time('booktime');
             $table->integer('count');
-            $table->dateTime('time');
+            $table->dateTime('time')->nullable();
             $table->string('remark')->nullable();
             $table->timestamps();
         });

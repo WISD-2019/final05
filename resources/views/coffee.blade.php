@@ -7,7 +7,7 @@
 <!-- 標頭 -->
 <!-- Header -->
 <header class="masthead" style="background-image: url('{{asset('img/bg-coffee.jpg')}}')">
-    <div class="container d-flex h-100 align-items-center">
+    <div class="container d-flex h-100 align-items-center" style="font-family: 微軟正黑體">
         <div class="mx-auto text-center" >
             <h3 class="display-1 mx-auto my-0 text-white"> Honey Cofe </h3>
             <h3 class="text-primary mx-auto mt-2 mb-5">想要來一杯香濃的咖啡嗎？事不宜遲立刻點擊下方進行挑選</h3>
@@ -21,8 +21,8 @@
 <section id="news" class="about-section text-left carousel slide" data-ride="carousel" style="background: #290e05">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 mx-auto mb-4">
-                <h2 class="text-white mb-4">最新消息</h2>
+            <div class="col-lg-8 mx-auto mb-4" style="font-family: 微軟正黑體">
+                <h2 class="text-white mb-4 ">最新消息</h2>
                 <!-- 指示符 -->
                 <ul class="carousel-indicators">
                     <li data-target="#news" data-slide-to="0" class="active"></li>
@@ -31,7 +31,7 @@
                 </ul>
 
                 <!-- 輪播圖片 -->
-                <div class="carousel-inner">
+                <div class="carousel-inner" >
                     <div class="carousel-item active">
                         <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
                         <div class="carousel-caption">
@@ -69,18 +69,18 @@
 
 <!-- 標頭 Projects 的下拉式方塊 -->
 <!-- Projects Section -->
-<section id="projects" class="projects-section" style="background: #290e05">
+<section id="projects" class="projects-section" style="background: #290e05 ; font-family: 微軟正黑體" >
     <div class="container">
 
         <!-- Featured Project Row -->
         <div class="row align-items-center no-gutters mb-4 mb-lg-5">
             <div class="col-xl-8 col-lg-7">
-                <img class="img-fluid mb-3 mb-lg-0" src="{{asset("img/焦糖瑪奇朵.jpg")}}" alt="">
+                <img class="img-fluid mb-3 mb-lg-0 float-right" src="{{asset("img/焦糖瑪奇朵.jpg")}}" alt="">
             </div>
             <div class="col-xl-4 col-lg-5">
                 <div class="featured-text text-center text-white text-lg-left">
-                    <h4>熱門產品</h4>
-                    <p class="text-white-50 mb-0">焦糖瑪奇朵</p>
+                    <h4 >熱門產品</h4>
+                    <p class="text-white-50 mb-0 ">焦糖瑪奇朵</p>
                 </div>
             </div>
         </div>
@@ -88,15 +88,16 @@
         <!-- Project One Row -->
         <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
             <div class="col-lg-6">
-                <img class="img-fluid" src="{{asset("img/卡布奇諾.jpg")}}" alt="">
+                <img class="img-fluid float-right" src="{{asset("img/卡布奇諾.jpg")}}" alt="">
             </div>
             <div class="col-lg-6">
                 <div class="bg-black text-center h-100 project">
                     <div class="d-flex h-100">
-                        <div class="project-text w-100 my-auto text-center text-lg-left">
-                            <h4 class="text-white">主力推薦</h4>
-                            <p class="mb-0 text-white-50">卡布奇諾</p>
+                        <div class="project-text w-100 my-auto text-center">
+                            <h4 class="text-white text-lg-left">主力推薦</h4>
+                            <p class="mb-0 text-white-50 text-lg-left">卡布奇諾</p>
                             <hr class="d-none d-lg-block mb-0 ml-0">
+                            <a href="{{ route('product.index') }}" class="js-scroll-trigger text-right">更多產品</a>
                         </div>
                     </div>
                 </div>
@@ -111,10 +112,11 @@
             <div class="col-lg-6 order-lg-first">
                 <div class="bg-black text-center h-100 project">
                     <div class="d-flex h-100">
-                        <div class="project-text w-100 my-auto text-center text-lg-right">
-                            <h4 class="text-white">午後甜點</h4>
-                            <p class="mb-0 text-white-50">烤布雷</p>
+                        <div class="project-text w-100 my-auto text-center ">
+                            <h4 class="text-white text-lg-right">午後甜點</h4>
+                            <p class="mb-0 text-white-50 text-lg-right">烤布雷</p>
                             <hr class="d-none d-lg-block mb-0 mr-0">
+                            <a href="{{ route('other.index') }}" class="js-scroll-trigger text-right">更多產品</a>
                         </div>
                     </div>
                 </div>
@@ -126,7 +128,7 @@
 
 <!-- 標頭 Contect 的下拉式方塊 -->
 <!-- Signup Section -->
-<section id="contect" class="contact-section" style="background: #290e05">
+<section id="contect" class="contact-section" style="background: #290e05 ; font-family: 微軟正黑體">
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-lg-8 mx-auto text-center">

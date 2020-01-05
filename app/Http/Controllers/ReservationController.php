@@ -17,6 +17,27 @@ class ReservationController extends Controller
         //
     }
 
+    //連結我的訂位頁面
+    public function myreservation(Request $request)
+    {
+        //顯示已有的訂位
+        //由 DB 擷取使用者所有任務
+        $reservations = Reservation::where('user_id', $request->user()->id)->get();
+        $data=['reservations'=>$reservations];
+        return view('member.myreservation.index', $data);
+    }
+
+    /**
+     * 建立一個新的控制器實例。
+     *
+     * @return void
+     */
+    //增加 middleware 的方法，用以呼叫名稱為 auth 的中介層程式，以檢查使用者的認證
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -24,7 +45,7 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        //
+        return view('member.myreservation.create');
     }
 
     /**
@@ -33,9 +54,18 @@ class ReservationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    //設定 ReservationController 對應的 function
+    //將表單送過來的資料用 Model 寫入資料庫
     public function store(Request $request)
     {
-        //
+        $request->user()->reservations()->create([
+            'bookdate' => $request -> bookdate,
+            'booktime' => $request -> booktime,
+            'count' => $request -> count,
+            'remark' => $request -> remark
+        ]);
+        //設定頁面跳轉
+        return redirect()->route('member.myreservation.index');
     }
 
     /**
@@ -55,9 +85,12 @@ class ReservationController extends Controller
      * @param  \App\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reservation $reservation)
+    //在 ReservationController 的 edit 內取得舊資料
+    public function edit($id)
     {
-        //
+        $reservations = Reservation::find($id);
+        $data = ['reservation' => $reservations];
+        return view('member.myreservation.edit', $data);
     }
 
     /**
@@ -67,9 +100,12 @@ class ReservationController extends Controller
      * @param  \App\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reservation $reservation)
+    //在 ReservationController 的 update 內更新資料
+    public function update(Request $request,$id)
     {
-        //
+        $reservations = Reservation::find($id);
+        $reservations->update($request->all());
+        return redirect()->route('member.myreservation.index');
     }
 
     /**
@@ -78,8 +114,11 @@ class ReservationController extends Controller
      * @param  \App\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reservation $reservation)
+    //在 ReservationController 的 destroy 內刪除資料
+    public function destroy($id)
     {
-        //
+        Reservation::destroy($id);
+        return redirect()->route('member.myreservation.index');
     }
+
 }

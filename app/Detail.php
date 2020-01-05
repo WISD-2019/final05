@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Detail extends Model
 {
+    // 這些屬性能被批量賦值
+    public $fillable = [ 'id', 'reservation_id', 'table_id' ];
+
     // 取得擁有此訂位明細的桌位。
     public function tables()
     {

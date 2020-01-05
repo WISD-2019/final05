@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    // 這些屬性能被批量賦值
+    public $fillable = [ 'name', 'user_id', 'finish', 'time', 'remark' ];
+
     // 取得擁有此訂餐的使用者。
     public function user()
     {
