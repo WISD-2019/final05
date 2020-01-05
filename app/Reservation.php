@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reservation extends Model
 {
+    protected $table = 'reservations';
+
     // 這些屬性能被批量賦值
     public $fillable = ['id', 'user_id', 'bookdate', 'booktime', 'count' , 'time', 'remark' ];
 
