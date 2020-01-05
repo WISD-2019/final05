@@ -21,7 +21,7 @@ class ReservationController extends Controller
     public function myreservation(Request $request)
     {
         //顯示已有的訂位
-        //由 DB 擷取使用者所有任務
+        //由 DB 擷取使用者所有訂位
         $reservations = Reservation::where('user_id', $request->user()->id)->get();
         $data=['reservations'=>$reservations];
         return view('member.myreservation.index', $data);

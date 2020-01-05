@@ -51,6 +51,11 @@ Route::group(['prefix' => 'myreservation'], function() {
     Route::delete('/{id}'  , ['as' => 'member.myreservation.destroy', 'uses' => 'ReservationController@destroy']);
 });
 
+/*我的訂餐路由*/
+Route::group(['prefix' => 'myorder'], function() {
+    Route::get('/'         , ['as' => 'member.myorder.index'  , 'uses' => 'OrderController@myorder']);
+});
+
 //後台
 
 Route::group(['prefix' => 'admin'], function() {

@@ -18,9 +18,13 @@ class OrderController extends Controller
     }
 
     //連結我的訂餐頁面
-    public function myorder()
+    public function myorder(Request $request)
     {
-        return view('myorder.index');
+        //顯示已有的訂餐
+        //由 DB 擷取使用者所有的訂餐
+        $orders = Order::where('user_id', $request->user()->id)->get();
+        $data=['orders'=>$orders];
+        return view('member.myorder.index', $data);
     }
 
     /**
