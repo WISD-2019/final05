@@ -87,3 +87,34 @@ Route::group(['prefix' => 'admin'], function() {
 
 });
 
+//員工
+Route::group(['prefix' => 'staff'], function() {
+    //員工路由
+    Route::get('/', ['as' => 'staff.dashboard.index', 'uses' => 'StaffDashboardController@index']);
+
+    //員工訂位路由
+    Route::get('reservation'          , ['as' => 'staff.reservation.index' , 'uses' => 'StaffreservationController@index']);
+    //員工新增訂位路由
+    Route::get('reservation/create'   , ['as' => 'staff.reservation.create', 'uses' => 'StaffreservationController@create']);
+    //員工編輯訂位路由
+    Route::get('reservation/{id}/edit', ['as' => 'staff.reservation.edit'  , 'uses' => 'StaffreservationController@edit']);
+    //員工儲存訂位路由
+    Route::post('reservation'         , ['as' =>'staff.reservation.store'  , 'uses' => 'StaffreservationController@store']);
+    //員工更新訂位路由
+    Route::patch('reservation/{id}'   , ['as' => 'staff.reservation.update', 'uses' => 'StaffreservationController@update']);
+
+
+    //員工訂餐路由
+    Route::get('order'          , ['as' => 'staff.order.index' , 'uses' => 'StafforderController@index']);
+    //員工新增訂餐路由
+    Route::get('order/create'   , ['as' => 'staff.order.create', 'uses' => 'StafforderController@create']);
+    //員工編輯訂餐路由
+    Route::get('order/{id}/edit', ['as' => 'staff.order.edit'  , 'uses' => 'StafforderController@edit']);
+    //員工儲存訂餐路由
+    Route::post('order'         , ['as' =>'staff.order.store'  , 'uses' => 'StafforderController@store']);
+    //員工更新訂餐路由
+    Route::patch('order/{id}'   , ['as' => 'staff.order.update', 'uses' => 'StafforderController@update']);
+
+
+});
+
