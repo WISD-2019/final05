@@ -56,9 +56,11 @@ class UsersController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function show(Users $users)
+    public function show($id)
     {
         //
+        $users = Users::find($id);
+        return view('admin.posts.delete', compact('users'));
     }
 
     /**

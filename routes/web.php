@@ -70,6 +70,7 @@ Route::group(['prefix' => 'admin'], function() {
     //後台更新管理員路由
     Route::patch('users/{id}'   , ['as' => 'admin.posts.update', 'uses' => 'UsersController@update']);
     //後台刪除管理員路由
+    Route::get('/users/{users}', 'UsersController@show')->name('admin.posts.delete');
     Route::delete('users/{id}'  , ['as' =>'admin.posts.destroy', 'uses' => 'UsersController@destroy']);
 
     //後台產品路由
