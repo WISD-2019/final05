@@ -67,9 +67,11 @@ class StaffreservationController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-
+        $reservations=Reservation::find($id);
+        $data=['reservations'=>$reservations];
+        return view('staff.reservation.edit',$data);
     }
 
     /**
@@ -79,9 +81,11 @@ class StaffreservationController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update(Request $request,$id)
     {
-
+        $reservations=Reservation::find($id);
+        $reservations->update($request->all());
+        return redirect()->route('staff.reservation.index');
     }
 
     /**
@@ -90,8 +94,9 @@ class StaffreservationController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy($id)
     {
-
+        Reservation::destroy($id);
+        return redirect()->route('staff.reservation.index');
     }
 }
