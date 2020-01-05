@@ -84,6 +84,7 @@ Route::group(['prefix' => 'admin'], function() {
     //後台更新產品路由
     Route::patch('product/{id}'   , ['as' => 'admin.product.update', 'uses' => 'ProductsController@update']);
     //後台刪除產品路由
+    Route::get('/product/{products}', 'ProductsController@show')->name('admin.product.delete');
     Route::delete('product/{id}',['as'=>'admin.product.destroy','uses'=>'ProductsController@destroy']);
 
 });

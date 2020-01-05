@@ -51,9 +51,11 @@ class ProductsController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function show(products $products)
+    public function show($id)
     {
         //
+        $products = Products::find($id);
+        return view('admin.product.delete', compact('products'));
     }
 
     /**
