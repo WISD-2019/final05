@@ -33,7 +33,7 @@ class StafforderController extends Controller
     public function create()
     {
         //
-
+        return view('staff.order.create');
     }
 
 
@@ -46,7 +46,8 @@ class StafforderController extends Controller
      */
     public function store(Request $request)
     {
-       
+        Order::create($request->all());
+        return redirect()->route('staff.order.index');
     }
 
     /**
