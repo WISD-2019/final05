@@ -54,6 +54,17 @@ Route::group(['prefix' => 'myreservation'], function() {
 /*我的訂餐路由*/
 Route::group(['prefix' => 'myorder'], function() {
     Route::get('/'         , ['as' => 'member.myorder.index'  , 'uses' => 'OrderController@myorder']);
+    //Route::get('/'         , ['as' => 'member.myorder.index'  , 'uses' => 'ItemController@index']);
+    //新增訂餐路由
+    Route::get('/create'   , ['as' => 'member.myorder.create' , 'uses' => 'OrderController@create']);
+    //編輯訂餐路由
+    Route::get('/{id}/edit', ['as' => 'member.myorder.edit'   , 'uses' => 'OrderController@edit']);
+    //儲存訂餐路由
+    Route::post('/'        , ['as' => 'member.myorder.store'  , 'uses' => 'OrderController@store']);
+    //設定更新訂餐路由
+    Route::patch('/{id}'   , ['as' => 'member.myorder.update' , 'uses' => 'OrderController@update']);
+    //設定刪除訂餐路由
+    Route::delete('/{id}'  , ['as' => 'member.myorder.destroy', 'uses' => 'OrderController@destroy']);
 });
 
 //後台
