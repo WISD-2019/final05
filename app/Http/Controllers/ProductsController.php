@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Products;
+use App\Product;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -15,7 +15,7 @@ class ProductsController extends Controller
     public function index()
     {
         //
-        $products=Products::orderBy('id','ASC')->get();
+        $products=Product::orderBy('id','ASC')->get();
         $data=['products'=>$products];
         return View('admin.product.index',$data);
     }
@@ -41,7 +41,7 @@ class ProductsController extends Controller
      */
     public function store(Request$request)
     {
-        products::create($request->all());
+        product::create($request->all());
         return redirect()->route('admin.product.index');
     }
 
@@ -54,7 +54,7 @@ class ProductsController extends Controller
     public function show($id)
     {
         //
-        $products = Products::find($id);
+        $products = Product::find($id);
         return view('admin.product.delete', compact('products'));
     }
 
@@ -66,7 +66,7 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        $products=products::find($id);
+        $products=product::find($id);
         $data=['products'=>$products];
         return view('admin.product.edit',$data);
     }
@@ -80,7 +80,7 @@ class ProductsController extends Controller
      */
     public function update(Request$request,$id)
     {
-        $products=products::find($id);
+        $products=product::find($id);
         $products->update($request->all());
         return redirect()->route('admin.product.index');
     }
@@ -93,7 +93,16 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        products::destroy($id);
+        product::destroy($id);
         return redirect()->route('admin.product.index');
+    }
+
+    public function search()
+    {
+
+
+        $products=Product::orderBy('id','ASC')->get();
+        $data=['products'=>$products];
+        return view('admin.product.search',$data);
     }
 }
