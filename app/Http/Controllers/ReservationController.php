@@ -43,6 +43,7 @@ class ReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //連結新增訂位頁面
     public function create()
     {
         return view('member.myreservation.create');

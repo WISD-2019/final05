@@ -47,9 +47,10 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //連結新增訂餐頁面
     public function create()
     {
-        //
+        return view('member.myorder.create');
     }
 
     /**
