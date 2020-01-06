@@ -55,7 +55,7 @@
             </div>
 
             <div class="text-right">
-                <button type="submit" class="btn btn-success">新增</button>
+                <button type="submit" class="btn btn-success" style="background-color:#00B8B8;color:#FFFFFF;border:3px black">新增</button>
             </div>
 
             <p>&nbsp;</p>

@@ -17,7 +17,6 @@
     </div>
 </div>
 <!-- /.row -->
-@include('admin.layouts.partials.validation')
 
 <div class="row">
     <div class="col-lg-12">
@@ -48,7 +47,7 @@
             <form action="{{ route('admin.posts.destroy', $users->id) }}" method="POST">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
-                <button type="submit" class="btn btn-success">刪除</button>
+                <button type="submit" class="btn btn-success" style="background-color:#00B8B8;color:#FFFFFF;border:3px black">刪除</button>
             </form>
         </div>
     </div>

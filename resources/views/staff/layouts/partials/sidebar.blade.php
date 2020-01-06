@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{ route('staff.dashboard.index') }}">後台管理</a>
+        <a class="navbar-brand" href="{{ route('staff.dashboard.index') }}">員工管理</a>
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
@@ -35,7 +35,7 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
             <li class="active">
-                <a href="{{ route('staff.dashboard.index') }}"><i class="fa fa-fw fa-dashboard"></i> 後台管理</a>
+                <a href="{{ route('staff.dashboard.index') }}"><i class="fa fa-fw fa-dashboard"></i> 員工管理</a>
             </li>
             <li>
                 <a href="{{ route('staff.reservation.index') }}"><i class="fa fa-fw fa-edit"></i> 訂位管理</a>

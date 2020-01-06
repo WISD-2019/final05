@@ -20,7 +20,7 @@
 
 <div class="row" style="margin-bottom: 20px; text-align: right">
     <div class="col-lg-12">
-        <a href="{{ route('staff.reservation.create') }}" class="btn btn-success">新增訂位</a>
+        <a href="{{ route('staff.reservation.create') }}" class="btn btn-success" style="background-color:#00B8B8;color:#FFFFFF;border:3px black">新增訂位</a>
     </div>
 </div>
 <!-- /.row -->
@@ -49,10 +49,13 @@
                         <td>{{$book->count}}</td>
                         <td>{{$book->time}}</td>
                         <td>
-                            <a href="{{route('staff.reservation.edit',$book->id)}}">編輯</a>/
-                                    <a href="reservation/{{ $book->id }}">
-                                        <button type="submit" class="btn btn-success">查看</button>
-                                    </a>
+                            <a href="{{route('staff.reservation.edit',$book->id)}}">
+                            <button type="submit" class="btn btn-success"  style="background-color:#FFFFFF;color:#0000D1;border:3px black">編輯</button>
+                            </a>
+                            /
+                            <a href="reservation/{{ $book->id }}">
+                            <button type="submit" class="btn btn-success" style="background-color:#FFFFFF;color:#00A8A8;border:3px black">查看</button>
+                            </a>
                         </td>
                     </tr>
                 @endforeach

@@ -20,7 +20,7 @@
 
 <div class="row" style="margin-bottom: 20px; text-align: right">
     <div class="col-lg-12">
-        <a href="{{ route('admin.posts.create') }}" class="btn btn-success">建立新管理員</a>
+        <a href="{{ route('admin.posts.create') }}" class="btn btn-success" style="background-color:#00B8B8;color:#FFFFFF;border:3px black">建立新管理員</a>
     </div>
 </div>
 <!-- /.row -->
@@ -49,9 +49,12 @@
                         <td>{{$post->email}}</td>
                         <td>{{$post->password}}</td>
                         <td>
-                            <a href="{{route('admin.posts.edit',$post->id)}}">編輯</a>/
+                            <a href="{{route('admin.posts.edit',$post->id)}}">
+                                <button type="submit" class="btn btn-success"  style="background-color:#FFFFFF;color:#1212FF;border:3px black">編輯</button>
+                            </a>
+                            /
                             <a href="users/{{ $post->id }}">
-                                <button type="submit" class="btn btn-success">刪除</button>
+                                <button type="submit" class="btn btn-success"  style="background-color:#FFFFFF;color:#FF0000;border:3px black">刪除</button>
                             </a>
                         </td>
                     </tr>
