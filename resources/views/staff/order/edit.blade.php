@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('staff.layouts.master')
 
 @section('title', '編輯訂餐')
 
