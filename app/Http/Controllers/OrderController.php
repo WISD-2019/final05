@@ -50,7 +50,9 @@ class OrderController extends Controller
     //連結新增訂餐頁面
     public function create()
     {
-        return view('member.myorder.create');
+        $proudcts = Product::orderBy('id')->get();
+        $data= ['products'=>$proudcts];
+        return view('member.myorder.create', $data);
     }
 
     /**
