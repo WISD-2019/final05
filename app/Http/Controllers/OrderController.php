@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Item;
 use App\Order;
+use App\Product;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -23,7 +25,9 @@ class OrderController extends Controller
         //顯示已有的訂餐
         //由 DB 擷取使用者所有的訂餐
         $orders = Order::where('user_id', $request->user()->id)->get();
-        $data=['orders'=>$orders];
+        $items = Item::all();
+        $proudcts = Product::orderBy('id')->get();
+        $data= ['orders'=>$orders,'items'=>$items,'products'=>$proudcts];
         return view('member.myorder.index', $data);
     }
 
@@ -76,7 +80,8 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(Order $order)
+
+    public function edit($id)
     {
         //
     }
@@ -88,7 +93,8 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order $order)
+
+    public function update(Request $request,$id)
     {
         //
     }
@@ -99,7 +105,8 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order)
+
+    public function destroy($id)
     {
         //
     }
