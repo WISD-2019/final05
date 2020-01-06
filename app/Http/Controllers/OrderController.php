@@ -25,7 +25,7 @@ class OrderController extends Controller
         //顯示已有的訂餐
         //由 DB 擷取使用者所有的訂餐
         $orders = Order::where('user_id', $request->user()->id)->get();
-        $items = Item::all();
+        $items = Item::orderBy('id')->get();
         $proudcts = Product::orderBy('id')->get();
         $data= ['orders'=>$orders,'items'=>$items,'products'=>$proudcts];
         return view('member.myorder.index', $data);
