@@ -119,7 +119,7 @@ Route::group(['prefix' => 'staff'], function() {
     //員工更新訂餐路由
     Route::patch('order/{id}'   , ['as' => 'staff.order.update', 'uses' => 'StafforderController@update']);
     //員工查看訂餐
-    Route::get('/order/{orders}', 'StafforderController@show')->name('staff.order.detail');
+    Route::get('/order/{order}', 'StafforderController@show')->name('staff.order.detail');
 
 
 });

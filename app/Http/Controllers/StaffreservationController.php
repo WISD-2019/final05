@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Reservation;
-use App\Users;
+use App\User;
+use App\Table;
+use App\Detail;
 
+use http\Encoding\Stream\Debrotli;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -57,11 +60,14 @@ class StaffreservationController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Reservation $reservation)
     {
         //
-        $reservations = Reservation::find($id);
-        return view('staff.reservation.detail', compact('reservations'));
+        $users = User::all();
+        $tables=Table::all();
+        $details=Detail::all();
+        $data=['reservations'=>$reservation,'users'=>$users,'tables'=>$tables,'details'=>$details];
+        return view('staff.reservation.detail',$data);
 
     }
 
