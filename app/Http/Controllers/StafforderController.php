@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\Item;
+use App\Product;
+use App\User;
+
 
 use Illuminate\Http\Request;
 
@@ -56,11 +60,14 @@ class StafforderController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Order $order)
     {
         //
-        $orders = Order::find($id);
-        return view('staff.order.detail', compact('orders'));
+        $users = User::all();
+        $items=Item::all();
+        $products=Product::orderBy('id')->get();
+        $data=['orders'=>$order,'users'=>$users,'items'=>$items,'products'=>$products];
+        return view('staff.order.detail',$data);
     }
 
     /**
