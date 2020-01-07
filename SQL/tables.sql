@@ -1,0 +1,27 @@
+SET NAMES utf8mb4;
+
+INSERT INTO `tables` (`id`, `count`, `created_at`, `updated_at`) VALUES
+(1,	2,	NULL,	NULL),
+(2,	2,	NULL,	NULL),
+(3,	2,	NULL,	NULL),
+(4,	2,	NULL,	NULL),
+(5,	2,	NULL,	NULL),
+(6,	2,	NULL,	NULL),
+(7,	2,	NULL,	NULL),
+(8,	2,	NULL,	NULL),
+(9,	4,	NULL,	NULL),
+(10,	4,	NULL,	NULL),
+(11,	4,	NULL,	NULL),
+(12,	4,	NULL,	NULL),
+(13,	4,	NULL,	NULL),
+(14,	4,	NULL,	NULL),
+(15,	4,	NULL,	NULL),
+(16,	4,	NULL,	NULL),
+(17,	4,	NULL,	NULL),
+(18,	4,	NULL,	NULL),
+(19,	6,	NULL,	NULL),
+(20,	6,	NULL,	NULL),
+(21,	6,	NULL,	NULL),
+(22,	6,	NULL,	NULL),
+(23,	8,	NULL,	NULL),
+(24,	8,	NULL,	NULL);
