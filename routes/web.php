@@ -21,6 +21,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
 /*首頁*/
 Route::get('/home', 'HomeController@index')->name('home');
 /*公告路由*/
@@ -48,6 +49,7 @@ Route::group(['prefix' => 'myreservation'], function() {
     //設定更新訂位路由
     Route::patch('/{id}'   , ['as' => 'member.myreservation.update' , 'uses' => 'ReservationController@update']);
     //設定刪除訂位路由
+    Route::get('/{reservations}/cancel',['as' => 'member.myreservation.cancel', 'uses' => 'ReservationController@show']);
     Route::delete('/{id}'  , ['as' => 'member.myreservation.destroy', 'uses' => 'ReservationController@destroy']);
 });
 
@@ -71,8 +73,6 @@ Route::group(['prefix' => 'myorder'], function() {
 Route::group(['prefix' => 'admin'], function() {
     //後台路由
     Route::get('/', ['as' => 'admin.dashboard.index', 'uses' => 'AdminDashboardController@index']);
-    //查詢產品路由
-    Route::get('search', ['as' => 'admin.dashboard.search', 'uses' => 'AdminDashboardController@search']);
 
     //後台管理員路由
     Route::get('users'          , ['as' => 'admin.posts.index' , 'uses' => 'UsersController@index']);

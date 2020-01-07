@@ -75,9 +75,11 @@ class ReservationController extends Controller
      * @param  \App\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function show(Reservation $reservation)
+    public function show($id)
     {
-        //
+        $reservations = Reservation::find($id);
+        $data = ['reservation' => $reservations];
+        return view('member.myreservation.cancel', $data);
     }
 
     /**
