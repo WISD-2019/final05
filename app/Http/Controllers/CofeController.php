@@ -19,7 +19,7 @@ class CofeController extends Controller
         //顯示已有的產品
         $proudcts = Product::orderBy('id')->get();
         $data= ['products'=>$proudcts];
-        return view('products.index', $data);
+        return view('products', $data);
     }
 
     //連結其他產品頁面
