@@ -14,7 +14,6 @@
                 <i class="fa fa-dashboard"></i> 後台管理
                 <i class="fa fa-dashboard"></i> <a href="{{route('admin.posts.index')}}">管理員管理</a>
                 <i class="fa fa-dashboard"></i> <a href="{{route('admin.product.index')}}">產品管理</a>
-                <i class="fa fa-dashboard"></i> <a href="{{route('admin.dashboard.search')}}">查詢</a>
             </li>
         </ol>
 

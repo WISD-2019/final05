@@ -98,11 +98,5 @@ class ProductsController extends Controller
         return redirect()->route('admin.product.index');
     }
 
-    public function search()
-    {
 
-        $products=Product::orderBy('id','ASC')->get();
-        $data=['products'=>$products];
-        return view('admin.product.search',$data);
-    }
 }
