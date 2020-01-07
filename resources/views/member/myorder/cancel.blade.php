@@ -5,7 +5,7 @@
 @section('content')
     <!-- Page Heading -->
     <!-- Header -->
-    <header class="masthead" style="background-image: url('{{asset('img/bg-coffee.jpg')}}')">
+    <header class="masthead" style="background-image: url('{{asset('img/reservation2020.JPG')}}')">
         <div class="container d-flex h-100 align-items-center" >
             <div class="mx-auto text-center" >
                 <h3 class="display-1 mx-auto my-0 text-white" style="font-family: 微軟正黑體"> 我的訂餐 </h3>
@@ -53,15 +53,15 @@
                     <tbody>
                     @foreach($products as $product)
                         @if($product->id == $item->product_id)
-                    <tr>
-                        <td style="text-align: center">{{$product->category}}</td>
-                        <td style="text-align: center">{{$product->name}}</td>
-                        <td style="text-align: center">$ {{$product->price}}</td>
-                        <td style="text-align: center">{{$item->count}}</td>
-                        <td style="text-align: center">{{$product->discount}}</td>
-                        <td style="text-align: center">{{$order->remark}}</td>
-                    </tr>
-                    @endif
+                            <tr>
+                                <td style="text-align: center">{{$product->category}}</td>
+                                <td style="text-align: center">{{$product->name}}</td>
+                                <td style="text-align: center">$ {{$product->price}}</td>
+                                <td style="text-align: center">{{$item->count}}</td>
+                                <td style="text-align: center">{{$product->discount}}</td>
+                                <td style="text-align: center">{{$order->remark}}</td>
+                            </tr>
+                        @endif
                     @endforeach
                     </tbody>
                 </table>

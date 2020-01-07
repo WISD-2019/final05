@@ -5,7 +5,7 @@
 @section('content')
     <!-- Page Heading -->
     <!-- Header -->
-    <header class="masthead" style="background-image: url('{{asset('img/bg-coffee.jpg')}}')">
+    <header class="masthead" style="background-image: url('{{asset('img/reservation2020.JPG')}}')">
         <div class="container d-flex h-100 align-items-center" >
             <div class="mx-auto text-center" >
                 <h3 class="display-1 mx-auto my-0 text-white" style="font-family: 微軟正黑體"> 我的餐點 </h3>
