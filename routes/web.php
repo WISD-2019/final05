@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,18 +9,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
 //前台
-
 Route::get('/', function () {
-
     return view('coffee');
-
 });
-
 Auth::routes();
-
 /*首頁*/
 Route::get('/home', 'HomeController@index')->name('home');
 /*公告路由*/
@@ -34,9 +26,7 @@ Route::get('/other',['as'=>'other.index','uses'=> 'CofeController@other']);
 Route::get('/about',['as'=>'about.index','uses'=> 'CofeController@about']);
 /*聯絡我們路由*/
 Route::get('/contect',['as'=>'contect.index','uses'=> 'CofeController@contect']);
-
 //會員
-
 /*我的訂位路由*/
 Route::group(['prefix' => 'myreservation'], function() {
     Route::get('/'         , ['as' => 'member.myreservation.index'  , 'uses' => 'ReservationController@myreservation']);
@@ -52,7 +42,6 @@ Route::group(['prefix' => 'myreservation'], function() {
     Route::get('/{reservations}/cancel',['as' => 'member.myreservation.cancel', 'uses' => 'ReservationController@show']);
     Route::delete('/{id}'  , ['as' => 'member.myreservation.destroy', 'uses' => 'ReservationController@destroy']);
 });
-
 /*我的訂餐路由*/
 Route::group(['prefix' => 'myorder'], function() {
     Route::get('/'         , ['as' => 'member.myorder.index'  , 'uses' => 'OrderController@myorder']);
@@ -68,14 +57,11 @@ Route::group(['prefix' => 'myorder'], function() {
     Route::get('/{orders}/cancel',['as' => 'member.myorder.cancel', 'uses' => 'OrderController@show']);
     Route::delete('/{id}'  , ['as' => 'member.myorder.destroy', 'uses' => 'OrderController@destroy']);
 });
-
 //後台
-
 Route::group(['prefix' => 'admin'], function() {
     //後台路由
     Route::get('/', ['as' => 'admin.dashboard.index', 'uses' => 'AdminDashboardController@index']);
 
-    
     //後台管理員路由
     Route::get('users'          , ['as' => 'admin.posts.index' , 'uses' => 'UsersController@index']);
     //後台新增管理員路由
@@ -89,7 +75,6 @@ Route::group(['prefix' => 'admin'], function() {
     //後台刪除管理員路由
     Route::get('/users/{users}', 'UsersController@show')->name('admin.posts.delete');
     Route::delete('users/{id}'  , ['as' =>'admin.posts.destroy', 'uses' => 'UsersController@destroy']);
-
     //後台產品路由
     Route::get('product'          , ['as' => 'admin.product.index' , 'uses' => 'ProductsController@index']);
     //後台新增產品路由
@@ -103,14 +88,11 @@ Route::group(['prefix' => 'admin'], function() {
     //後台刪除產品路由
     Route::get('/product/{products}', 'ProductsController@show')->name('admin.product.delete');
     Route::delete('product/{id}',['as'=>'admin.product.destroy','uses'=>'ProductsController@destroy']);
-
 });
-
 //員工
 Route::group(['prefix' => 'staff'], function() {
     //員工路由
     Route::get('/', ['as' => 'staff.dashboard.index', 'uses' => 'StaffDashboardController@index']);
-
     //員工訂位路由
     Route::get('reservation'          , ['as' => 'staff.reservation.index' , 'uses' => 'StaffreservationController@index']);
     //員工新增訂位路由
@@ -123,8 +105,6 @@ Route::group(['prefix' => 'staff'], function() {
     Route::patch('reservation/{id}'   , ['as' => 'staff.reservation.update', 'uses' => 'StaffreservationController@update']);
     //員工查看訂位
     Route::get('/reservation/{reservation}', 'StaffreservationController@show')->name('staff.reservation.detail');
-
-
     //員工訂餐路由
     Route::get('order'          , ['as' => 'staff.order.index' , 'uses' => 'StafforderController@index']);
     //員工新增訂餐路由
@@ -137,7 +117,4 @@ Route::group(['prefix' => 'staff'], function() {
     Route::patch('order/{id}'   , ['as' => 'staff.order.update', 'uses' => 'StafforderController@update']);
     //員工查看訂餐
     Route::get('/order/{order}', 'StafforderController@show')->name('staff.order.detail');
-
-
 });
-
