@@ -25,11 +25,11 @@ class PostRequest extends FormRequest
     {
         return [
             //
-            'name'=>'required|min:3|max:255',
-            'type'=>'required|min:3|max:255',
+            'name'=>'required|min:3|max:255|unique:users',
+            'type'=>'required|max:255',
             'phone'=>'required|min:10|max:11',
-            'email'=>'required|max:255',
-            'possword'=>'required|min:8|max:255',
+            'email'=>'required|max:255|unique:users',
+            'password'=>'required|min:8|max:255',
 
 
 

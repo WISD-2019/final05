@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">
-            管理員管理 <small>所有管理員名單</small>
+            管理員管理 <small>所有使用者名單</small>
         </h1>
         <ol class="breadcrumb">
             <li class="active">
