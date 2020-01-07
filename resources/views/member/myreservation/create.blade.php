@@ -35,7 +35,7 @@
     </div>
 
     <!-- /.row -->
-{{--    @include('admin.layouts.partials.validation')--}}
+{{--    @include('member.layouts.partials.validation')--}}
 
     <!-- /.row -->
     <div class="row" style="font-family: 微軟正黑體">
@@ -61,7 +61,7 @@
                         <span class="input-group-text">預定時間：</span>
                     </div>
                     <!--<input class="form-control" placeholder="請輸入預定時間">-->
-                    <input name="booktime" class="form-control" placeholder="Ex:163000 (下午4點30分)" type="time">
+                    <input name="booktime" class="form-control" placeholder="請輸入預定時間" type="time">
                 </div>
 
                 <div class="input-group mb-4">

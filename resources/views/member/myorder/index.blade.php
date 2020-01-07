@@ -74,7 +74,7 @@
                                                         <a href="{{ route('member.myorder.edit',$order->id) }}">編輯</a>
                                                     </td>
                                                     <td style="text-align: center">
-                                                        <button type="button" class="btnSelect" data-toggle="modal" data-target="#myModal">刪除</button>
+                                                        <button type="button" class="btn-danger btn-sm" data-toggle="modal" data-target="#myModal">刪除</button>
                                                     </td>
                                                 </tr>
                                             @endif

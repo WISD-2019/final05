@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', '編輯文章')
+@section('title', '編輯訂位')
 
 @section('content')
     <!-- Page Heading -->
@@ -35,7 +35,7 @@
     </div>
 
     <!-- /.row -->
-    {{--    @include('admin.layouts.partials.validation')--}}
+    {{--    @include('member.layouts.partials.validation')--}}
 
     <!-- /.row -->
     <div class="row" style="font-family: 微軟正黑體">
