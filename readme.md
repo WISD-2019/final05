@@ -1,20 +1,21 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+## 系統擷取畫面
+-首頁
+  瀏覽相關的店家簡介、活動公告、產品介紹、聯絡資訊
+![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E9%A6%96%E9%A0%81.png)
+-
+![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E9%A6%96%E9%A0%81.png)
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+-
+![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E9%A6%96%E9%A0%81.png)
 
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+-
+![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E9%A6%96%E9%A0%81.png)
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+-
+![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E9%A6%96%E9%A0%81.png)
+
+-
+![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E9%A6%96%E9%A0%81.png)
 
 ## 系統的作用
 
