@@ -17,7 +17,7 @@
     </div>
 </div>
 <!-- /.row -->
-
+@include('admin.layouts.partials.validation')
 
 <div class="row">
     <div class="col-lg-12">

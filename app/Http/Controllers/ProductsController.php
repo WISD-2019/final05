@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -39,7 +40,7 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request$request)
+    public function store(ProductRequest $request)
     {
         product::create($request->all());
         return redirect()->route('admin.product.index');
@@ -99,7 +100,6 @@ class ProductsController extends Controller
 
     public function search()
     {
-
 
         $products=Product::orderBy('id','ASC')->get();
         $data=['products'=>$products];
