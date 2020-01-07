@@ -72,7 +72,6 @@ class OrderController extends Controller
         $request->user()->orders()->create([
             'remark' => $request -> remark
         ]);
-        $request->save();
         //設定頁面跳轉
         return redirect()->route('member.myorder.index');
     }
