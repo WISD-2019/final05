@@ -46,6 +46,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Reservation::class);
     }
+    // 取得該使用者的所有訂餐明細。
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
 
 
 }

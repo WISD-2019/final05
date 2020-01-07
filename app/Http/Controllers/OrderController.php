@@ -61,9 +61,20 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    //設定 OrderController 對應的 function
+    //將表單送過來的資料用 Model 寫入資料庫
     public function store(Request $request)
     {
-        //
+        $request->user()->items()->create([
+            'product_id' => $request -> product_id,
+            'count' => $request -> count,
+        ]);
+        $request->user()->orders()->create([
+            'remark' => $request -> remark
+    ]);
+
+        //設定頁面跳轉
+        return redirect()->route('member.myorder.index');
     }
 
     /**
