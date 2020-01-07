@@ -119,10 +119,10 @@
                     <div class="top-right links">
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="{{ route('myorder.index') }}">我的訂餐</a>
+                                <a class="nav-link js-scroll-trigger" href="{{ route('member.myorder.index') }}">我的訂餐</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" href="{{ route('myreservation.index') }}">我的訂位</a>
+                                <a class="nav-link js-scroll-trigger" href="{{ route('member.myreservation.index') }}">我的訂位</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
