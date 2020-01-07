@@ -83,9 +83,13 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show($id)
     {
-        //
+        $proudcts = Product::orderBy('id')->get();
+        $orders = Order::find($id);
+        $items = Item::find($id);
+        $data = ['products'=>$proudcts,'order' => $orders,'item' => $items];
+        return view('member.myorder.cancel', $data);
     }
 
     /**

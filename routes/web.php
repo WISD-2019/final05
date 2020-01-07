@@ -65,6 +65,7 @@ Route::group(['prefix' => 'myorder'], function() {
     //設定更新訂餐路由
     Route::patch('/{id}'   , ['as' => 'member.myorder.update' , 'uses' => 'OrderController@update']);
     //設定刪除訂餐路由
+    Route::get('/{orders}/cancel',['as' => 'member.myorder.cancel', 'uses' => 'OrderController@show']);
     Route::delete('/{id}'  , ['as' => 'member.myorder.destroy', 'uses' => 'OrderController@destroy']);
 });
 

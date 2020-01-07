@@ -74,7 +74,9 @@
                                                         <a href="{{ route('member.myorder.edit',$order->id) }}">編輯</a>
                                                     </td>
                                                     <td style="text-align: center">
-                                                        <button type="button" class="btn-danger btn-sm" data-toggle="modal" data-target="#myModal">刪除</button>
+                                                        <a href="{{ route('member.myorder.cancel',$order->id) }}">
+                                                            <button type="button" class="btn-danger btn-sm" >刪除</button>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             @endif
@@ -85,34 +87,6 @@
                         @endforeach
                         </tbody>
                     </table>
-                    <!-- 模態框 -->
-                    <div class="modal fade" id="myModal">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <!-- 模態框頭部 -->
-                                <div class="modal-header">
-                                    <h6 class="modal-title">確認取消</h6>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
-                                <!-- 模態框主體 -->
-                                <div class="modal-body">
-                                    <h5>您是否要取消該筆餐點？</h5>
-                                </div>
-                                <!-- 模態框底部 -->
-                                <div class="modal-footer">
-                                    <!-- 刪除資料 -->
-                                    <form action="/myorder/{{ $order->id, $item->id }}" method="POST">
-                                        {{ csrf_field() }}
-                                        {{ method_field('DELETE') }}
-                                        <input type="hidden" name="_method" value="DELETE">
-
-                                        <button class="btn btn-primary">確定</button>
-                                    </form>
-                                    <button class="btn btn-primary" data-dismiss="modal">取消</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="col-lg-1" style="background: #290e05">
