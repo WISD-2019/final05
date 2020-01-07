@@ -71,8 +71,8 @@ class OrderController extends Controller
         ]);
         $request->user()->orders()->create([
             'remark' => $request -> remark
-    ]);
-
+        ]);
+        $request->save();
         //設定頁面跳轉
         return redirect()->route('member.myorder.index');
     }
@@ -94,10 +94,14 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-
+    //在 OrderController 的 edit 內取得舊資料
     public function edit($id)
     {
-        //
+        $proudcts = Product::orderBy('id')->get();
+        $orders = Order::find($id);
+        $items = Item::find($id);
+        $data = ['products'=>$proudcts,'order' => $orders,'item' => $items];
+        return view('member.myorder.edit', $data);
     }
 
     /**
@@ -107,10 +111,16 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-
+    //在 OrderController 的 update 內更新資料
     public function update(Request $request,$id)
     {
-        //
+        $items =Item::find($id);
+        $items->update($request->all());
+        $orders = Order::find($id);
+        $orders->update($request->all());
+        $orders->save();
+        $items->save();
+        return redirect()->route('member.myorder.index');
     }
 
     /**

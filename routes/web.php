@@ -54,7 +54,6 @@ Route::group(['prefix' => 'myreservation'], function() {
 /*我的訂餐路由*/
 Route::group(['prefix' => 'myorder'], function() {
     Route::get('/'         , ['as' => 'member.myorder.index'  , 'uses' => 'OrderController@myorder']);
-    //Route::get('/'         , ['as' => 'member.myorder.index'  , 'uses' => 'ItemController@index']);
     //新增訂餐路由
     Route::get('/create'   , ['as' => 'member.myorder.create' , 'uses' => 'OrderController@create']);
     //編輯訂餐路由

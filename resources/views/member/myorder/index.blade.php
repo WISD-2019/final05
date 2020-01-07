@@ -46,8 +46,8 @@
                         <tr>
                             <th width="60" style="text-align: center">類別</th>
                             <th width="80" style="text-align: center">產品名稱</th>
-                            <th width="30" style="text-align: center">數量</th>
                             <th width="30" style="text-align: center">價格</th>
+                            <th width="30" style="text-align: center">數量</th>
                             <th width="30" style="text-align: center">折扣</th>
                             <th width="90" style="text-align: center">備註</th>
                             <th width="40" style="text-align: center">編輯</th>
@@ -57,20 +57,26 @@
                         <tbody>
                         @foreach($orders as $order)
                             @foreach($items as $item)
-                                @if($item->order_id == $order->id)
-                                    @foreach($products as $product)
-                                        @if($item->product_id == $product->id)
-                                            <tr>
-                                                <!-- 在 View 顯示資料 -->
-                                                <td style="text-align: center">{{$product->category}}</td>
-                                                <td style="text-align: center">{{$product->name}}</td>
-                                                <td style="text-align: center">{{$item->count}}</td>
-                                                <td style="text-align: center">$ {{$product->price}}</td>
-                                                <td style="text-align: center">{{$product->discount}}</td>
-                                                <td style="text-align: center">{{$order->remark}}</td>
-                                            </tr>
-                                        @endif
-                                    @endforeach
+                                @if($order->id == $item->id)
+                                    @if($item->user_id == $order->user_id)
+                                        @foreach($products as $product)
+                                            @if($item->product_id == $product->id)
+                                                <tr>
+                                                    <!-- 在 View 顯示資料 -->
+                                                    <td style="text-align: center">{{$product->category}}</td>
+                                                    <td style="text-align: center">{{$product->name}}</td>
+                                                    <td style="text-align: center">$ {{$product->price}}</td>
+                                                    <td style="text-align: center">{{$item->count}}</td>
+                                                    <td style="text-align: center">{{$product->discount}}</td>
+                                                    <td style="text-align: center">{{$order->remark}}</td>
+                                                    <td style="text-align: center">
+                                                        <!-- 編輯資料 -->
+                                                        <a href="{{ route('member.myorder.edit',$order->id) }}">編輯</a>
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
+                                    @endif
                                 @endif
                             @endforeach
                         @endforeach
