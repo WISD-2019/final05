@@ -129,9 +129,11 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-
+    //在 OrderController 的 destroy 內刪除資料
     public function destroy($id)
     {
-        //
+        Order::destroy($id);
+        Item::destroy($id);
+        return redirect()->route('member.myorder.index');
     }
 }
