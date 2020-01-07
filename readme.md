@@ -1,22 +1,30 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+## 系統擷取畫面
+# 首頁
+- 瀏覽相關的店家簡介、活動公告、產品介紹、聯絡資訊
+![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E9%A6%96%E9%A0%81.png)
+# 產品介紹之頁面
+- 列出所有販賣之產品供顧客查看與購買
+![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E7%94%A2%E5%93%81%E4%BB%8B%E7%B4%B9.png)
+# 訂餐之頁面
+-提供會員查看訂餐狀況以及新增、編輯和刪除訂餐資料
+![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E6%88%91%E7%9A%84%E8%A8%82%E9%A4%90.png)
+# 新增訂位之頁面
+-提供會員新增訂位的資料(包括預定日期、預定時間、訂位人數和備註)
+![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E6%96%B0%E5%A2%9E%E8%A8%82%E4%BD%8D.png)
+# 首頁
+-
+![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E9%A6%96%E9%A0%81.png)
+# 首頁
+-
+![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E9%A6%96%E9%A0%81.png)
+# 首頁
+-
+![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E9%A6%96%E9%A0%81.png)
+# 首頁
+-
+![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E9%A6%96%E9%A0%81.png)
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
-
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
-
-## 系統的作用
+## 系統的名稱及作用
 
 線上訂房系統
 
@@ -28,13 +36,13 @@
 ## 系統的主要功能
 前台
 
-- 最新消息(Route::get('post', function () {return view('bootstarap.post');}))   [3A632068 彭惠昕](https://github.com/3A632068)
-- 關於我們(Route::get('about', function () {    return view('bootstarap.about');})   [3A632068 彭惠昕](https://github.com/3A632068)
-- 交通(Route::get('traffic', function () { return view('bootstarap.traffic');})   [3A632068 彭惠昕](https://github.com/3A632068)
-- 房型 (Route::get('room', 'RoomController@index')) [3A632068 彭惠昕](https://github.com/3A632068)
-- 房型詳細資料 (Route::get('/room/{room}', 'RoomController@show'))   [3A632068 彭惠昕](https://github.com/3A632068)
-- 留言 (Route::get('/comment', 'CommentController@index'))   [3A632068 彭惠昕](https://github.com/3A632068)
-- 購物車 (Route::get('/cart', 'CartController@index'))   [3A632068 彭惠昕](https://github.com/3A632068)
+- 最新消息(Route::get('post', function () {return view('bootstarap.post');}))   [3A632065 蔡欣如](https://github.com/3A632065)
+- 關於我們(Route::get('about', function () {    return view('bootstarap.about');})   [3A632065 蔡欣如](https://github.com/3A632065)
+- 交通(Route::get('traffic', function () { return view('bootstarap.traffic');})   [3A632065 蔡欣如](https://github.com/3A632065)
+- 房型 (Route::get('room', 'RoomController@index')) [3A632065 蔡欣如](https://github.com/3A632065)
+- 房型詳細資料 (Route::get('/room/{room}', 'RoomController@show'))   [3A632065 蔡欣如](https://github.com/3A632065)
+- 留言 (Route::get('/comment', 'CommentController@index'))   [3A632065 蔡欣如](https://github.com/3A632065)
+- 購物車 (Route::get('/cart', 'CartController@index'))   [3A632065 蔡欣如](https://github.com/3A632065)
 
 後台
 
