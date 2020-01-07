@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
+use App\Item;
 use App\Product;
-use App\Http\Requests\ProductRequest;
+use App\User;
+
+
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller
+use App\Http\Requests;
+
+use App\Http\Requests\PostRequest;
+
+class StafforderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +24,9 @@ class ProductsController extends Controller
     public function index()
     {
         //
-        $products=Product::orderBy('id','ASC')->get();
-        $data=['products'=>$products];
-        return View('admin.product.index',$data);
+        $orders=Order::orderBy('id','ASC')->get();
+        $data=['orders'=>$orders];
+        return View('staff.order.index',$data);
     }
 
     /**
@@ -29,7 +37,7 @@ class ProductsController extends Controller
     public function create()
     {
         //
-        return view('admin.product.create');
+        return view('staff.order.create');
     }
 
 
@@ -40,10 +48,10 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProductRequest $request)
+    public function store(Request $request)
     {
-        product::create($request->all());
-        return redirect()->route('admin.product.index');
+        Order::create($request->all());
+        return redirect()->route('staff.order.index');
     }
 
     /**
@@ -52,11 +60,14 @@ class ProductsController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Order $order)
     {
         //
-        $products = Product::find($id);
-        return view('admin.product.delete', compact('products'));
+        $users = User::all();
+        $items=Item::all();
+        $products=Product::orderBy('id')->get();
+        $data=['orders'=>$order,'users'=>$users,'items'=>$items,'products'=>$products];
+        return view('staff.order.detail',$data);
     }
 
     /**
@@ -67,9 +78,9 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        $products=product::find($id);
-        $data=['products'=>$products];
-        return view('admin.product.edit',$data);
+        $orders=Order::find($id);
+        $data=['orders'=>$orders];
+        return view('staff.order.edit',$data);
     }
 
     /**
@@ -79,11 +90,11 @@ class ProductsController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function update(Request$request,$id)
+    public function update(Request $request,$id)
     {
-        $products=product::find($id);
-        $products->update($request->all());
-        return redirect()->route('admin.product.index');
+        $orders=Order::find($id);
+        $orders->update($request->all());
+        return redirect()->route('staff.order.index');
     }
 
     /**
@@ -94,15 +105,7 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        product::destroy($id);
-        return redirect()->route('admin.product.index');
-    }
-
-    public function search()
-    {
-
-        $products=Product::orderBy('id','ASC')->get();
-        $data=['products'=>$products];
-        return view('admin.product.search',$data);
+        Order::destroy($id);
+        return redirect()->route('staff.order.index');
     }
 }

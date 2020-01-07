@@ -20,7 +20,7 @@
 
 <div class="row" style="margin-bottom: 20px; text-align: right">
     <div class="col-lg-12">
-        <a href="{{ route('admin.product.create') }}" class="btn btn-success">建立新產品</a>
+        <a href="{{ route('admin.product.create') }}" class="btn btn-success" style="background-color:#00B8B8;color:#FFFFFF;border:3px black">建立新產品</a>
     </div>
 </div>
 <!-- /.row -->
@@ -49,13 +49,14 @@
                         <td>{{$product->discount}}</td>
                         <td>{{($product->whether)}}</td>
                         <td>
-                            <a href="{{route('admin.product.edit',$product->id)}}">編輯</a>
+                            <a href="{{route('admin.product.edit',$product->id)}}">
+                                <button type="submit" class="btn btn-success"  style="background-color:#FFFFFF;color:#1212FF;border:3px black">編輯</button>
+                            </a>
                             /
-                            <form action="{{ route('admin.product.destroy', $product->id) }}" method="POST">
-                                {{ csrf_field() }}
-                                {{ method_field('DELETE') }}
-                                <button type="submit" class="btn btn-success">刪除</button>
-                            </form>
+                            <a href="product/{{ $product->id }}">
+                                <button type="submit" class="btn btn-success"  style="background-color:#FFFFFF;color:#FF0000;border:3px black">刪除</button>
+                            </a>
+
                         </td>
                     </tr>
                 @endforeach

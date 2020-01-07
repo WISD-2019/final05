@@ -17,7 +17,7 @@
     </div>
 </div>
 <!-- /.row -->
-
+@include('admin.layouts.partials.validation')
 
 <div class="row">
     <div class="col-lg-12">
@@ -53,14 +53,14 @@
                 <label>是否上架：</label>
                 <select name="whether">
                     <option value=" "> </option>
-                    <option value="是">是</option>
-                    <option value="否">否</option>
+                    <option value="1">是</option>
+                    <option value="0">否</option>
                 </select>
             </div>
 
 
             <div class="text-right">
-                <button type="submit" class="btn btn-success">新增</button>
+                <button type="submit" class="btn btn-success" style="background-color:#00B8B8;color:#FFFFFF;border:3px black">新增</button>
             </div>
 
             <p>&nbsp;</p>

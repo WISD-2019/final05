@@ -2,8 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Users;
+use App\User;
+
 use Illuminate\Http\Request;
+
+use App\Http\Requests;
+
+use App\Http\Requests\PostRequest;
+
+
+use Illuminate\Support\Facades\Validator;
 
 class UsersController extends Controller
 {
@@ -15,7 +23,7 @@ class UsersController extends Controller
     public function index()
     {
         //
-        $users=Users::orderBy('id','ASC')->get();
+        $users=User::orderBy('id','ASC')->get();
         $data=['users'=>$users];
         return View('admin.posts.index',$data);
     }
@@ -28,6 +36,7 @@ class UsersController extends Controller
     public function create()
     {
         //
+
         return view('admin.posts.create');
     }
 
@@ -39,9 +48,9 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request$request)
+    public function store(PostRequest $request)
     {
-        users::create($request->all());
+        user::create($request->all());
         return redirect()->route('admin.posts.index');
     }
 
@@ -51,9 +60,11 @@ class UsersController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function show(Users $users)
+    public function show($id)
     {
         //
+        $users = User::find($id);
+        return view('admin.posts.delete', compact('users'));
     }
 
     /**
@@ -64,7 +75,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $users=users::find($id);
+        $users=user::find($id);
         $data=['users'=>$users];
         return view('admin.posts.edit',$data);
     }
@@ -76,9 +87,9 @@ class UsersController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function update(Request$request,$id)
+    public function update(Request $request,$id)
     {
-        $users=users::find($id);
+        $users=user::find($id);
         $users->update($request->all());
         return redirect()->route('admin.posts.index');
     }
@@ -91,7 +102,7 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        Post::destroy($id);
+        User::destroy($id);
         return redirect()->route('admin.posts.index');
     }
 }

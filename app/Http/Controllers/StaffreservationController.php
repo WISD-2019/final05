@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
-use App\Http\Requests\ProductRequest;
+use App\Reservation;
+use App\User;
+use App\Table;
+use App\Detail;
+
+use http\Encoding\Stream\Debrotli;
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller
+use App\Http\Requests;
+
+use App\Http\Requests\PostRequest;
+
+class StaffreservationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +24,9 @@ class ProductsController extends Controller
     public function index()
     {
         //
-        $products=Product::orderBy('id','ASC')->get();
-        $data=['products'=>$products];
-        return View('admin.product.index',$data);
+        $reservations=Reservation::orderBy('id','ASC')->get();
+        $data=['reservations'=>$reservations];
+        return View('staff.reservation.index',$data);
     }
 
     /**
@@ -29,7 +37,7 @@ class ProductsController extends Controller
     public function create()
     {
         //
-        return view('admin.product.create');
+        return view('staff.reservation.create');
     }
 
 
@@ -40,10 +48,10 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProductRequest $request)
+    public function store(Request $request)
     {
-        product::create($request->all());
-        return redirect()->route('admin.product.index');
+        Reservation::create($request->all());
+        return redirect()->route('staff.reservation.index');
     }
 
     /**
@@ -52,11 +60,15 @@ class ProductsController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Reservation $reservation)
     {
         //
-        $products = Product::find($id);
-        return view('admin.product.delete', compact('products'));
+        $users = User::all();
+        $tables=Table::all();
+        $details=Detail::all();
+        $data=['reservations'=>$reservation,'users'=>$users,'tables'=>$tables,'details'=>$details];
+        return view('staff.reservation.detail',$data);
+
     }
 
     /**
@@ -67,9 +79,9 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        $products=product::find($id);
-        $data=['products'=>$products];
-        return view('admin.product.edit',$data);
+        $reservations=Reservation::find($id);
+        $data=['reservations'=>$reservations];
+        return view('staff.reservation.edit',$data);
     }
 
     /**
@@ -79,11 +91,11 @@ class ProductsController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function update(Request$request,$id)
+    public function update(Request $request,$id)
     {
-        $products=product::find($id);
-        $products->update($request->all());
-        return redirect()->route('admin.product.index');
+        $reservations=Reservation::find($id);
+        $reservations->update($request->all());
+        return redirect()->route('staff.reservation.index');
     }
 
     /**
@@ -94,15 +106,7 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        product::destroy($id);
-        return redirect()->route('admin.product.index');
-    }
-
-    public function search()
-    {
-
-        $products=Product::orderBy('id','ASC')->get();
-        $data=['products'=>$products];
-        return view('admin.product.search',$data);
+        Reservation::destroy($id);
+        return redirect()->route('staff.reservation.index');
     }
 }

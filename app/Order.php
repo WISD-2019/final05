@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    protected $table = 'orders';
+
     // 這些屬性能被批量賦值
     public $fillable = [ 'name', 'user_id', 'finish', 'time', 'remark' ];
 
