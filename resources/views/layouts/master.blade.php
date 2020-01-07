@@ -9,7 +9,23 @@
 
     <!-- 連結 title 行 -->
     <title>@yield('title')</title>
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
 
+    <!-- Plugin JavaScript -->
+    <script src="{{asset('js/jquery.easing.min.js')}}"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{{asset('js/grayscale.min.js')}}"></script>
     <!-- Bootstrap core CSS -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Custom fonts for this template -->
@@ -19,6 +35,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{{asset('css/grayscale.min.css')}}" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -34,16 +51,9 @@
     <!-- Footer -->
     @include('layouts.partials.footer')
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="{{asset('js/jquery.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="{{asset('js/jquery.easing.min.js')}}"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="{{asset('js/grayscale.min.js')}}"></script>
-
+@section('script')
+@stop
 </body>
 
 </html>
