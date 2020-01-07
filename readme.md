@@ -1,5 +1,5 @@
 ## 系統擷取畫面
-#首頁
+首頁
 
 - 瀏覽相關的店家簡介、活動公告、產品介紹、聯絡資訊
 ![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E9%A6%96%E9%A0%81.png)
