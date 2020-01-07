@@ -12,8 +12,5 @@ class AdminDashboardController extends Controller
         return view('admin.dashboard.index');
     }
 
-    public function search()
-    {
-        return view('admin.dashboard.search');
-    }
+
 }

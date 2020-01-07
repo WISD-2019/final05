@@ -56,9 +56,8 @@ Route::group(['prefix' => 'myreservation'], function() {
 Route::group(['prefix' => 'admin'], function() {
     //後台路由
     Route::get('/', ['as' => 'admin.dashboard.index', 'uses' => 'AdminDashboardController@index']);
-    //查詢產品路由
-    Route::get('search', ['as' => 'admin.dashboard.search', 'uses' => 'AdminDashboardController@search']);
 
+    
     //後台管理員路由
     Route::get('users'          , ['as' => 'admin.posts.index' , 'uses' => 'UsersController@index']);
     //後台新增管理員路由
