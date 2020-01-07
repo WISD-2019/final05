@@ -28,13 +28,13 @@
 ## 系統的主要功能
 前台
 
-- 最新消息(Route::get('post', function () {return view('bootstarap.post');}))   [3A632068 彭惠昕](https://github.com/3A632068)
-- 關於我們(Route::get('about', function () {    return view('bootstarap.about');})   [3A632068 彭惠昕](https://github.com/3A632068)
-- 交通(Route::get('traffic', function () { return view('bootstarap.traffic');})   [3A632068 彭惠昕](https://github.com/3A632068)
-- 房型 (Route::get('room', 'RoomController@index')) [3A632068 彭惠昕](https://github.com/3A632068)
-- 房型詳細資料 (Route::get('/room/{room}', 'RoomController@show'))   [3A632068 彭惠昕](https://github.com/3A632068)
-- 留言 (Route::get('/comment', 'CommentController@index'))   [3A632068 彭惠昕](https://github.com/3A632068)
-- 購物車 (Route::get('/cart', 'CartController@index'))   [3A632068 彭惠昕](https://github.com/3A632068)
+- 最新消息(Route::get('post', function () {return view('bootstarap.post');}))   [3A632065 蔡欣如](https://github.com/3A632065)
+- 關於我們(Route::get('about', function () {    return view('bootstarap.about');})   [3A632065 蔡欣如](https://github.com/3A632065)
+- 交通(Route::get('traffic', function () { return view('bootstarap.traffic');})   [3A632065 蔡欣如](https://github.com/3A632065)
+- 房型 (Route::get('room', 'RoomController@index')) [3A632065 蔡欣如](https://github.com/3A632065)
+- 房型詳細資料 (Route::get('/room/{room}', 'RoomController@show'))   [3A632065 蔡欣如](https://github.com/3A632065)
+- 留言 (Route::get('/comment', 'CommentController@index'))   [3A632065 蔡欣如](https://github.com/3A632065)
+- 購物車 (Route::get('/cart', 'CartController@index'))   [3A632065 蔡欣如](https://github.com/3A632065)
 
 後台
 
