@@ -75,6 +75,7 @@ Route::group(['prefix' => 'admin'], function() {
     //後台路由
     Route::get('/', ['as' => 'admin.dashboard.index', 'uses' => 'AdminDashboardController@index']);
 
+    
     //後台管理員路由
     Route::get('users'          , ['as' => 'admin.posts.index' , 'uses' => 'UsersController@index']);
     //後台新增管理員路由
