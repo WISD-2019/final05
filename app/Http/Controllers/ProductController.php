@@ -14,9 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('products');
+        //
     }
-
     /**
      * Show the form for creating a new resource.
      *

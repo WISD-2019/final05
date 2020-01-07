@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 
 class CofeController extends Controller
@@ -15,7 +16,10 @@ class CofeController extends Controller
     //連結咖啡系列頁面
     public function product()
     {
-        return view('products');
+        //顯示已有的產品
+        $proudcts = Product::orderBy('id')->get();
+        $data= ['products'=>$proudcts];
+        return view('products.index', $data);
     }
 
     //連結其他產品頁面
