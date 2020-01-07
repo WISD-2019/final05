@@ -22,7 +22,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto mb-4" style="font-family: 微軟正黑體">
-                <h2 class="text-white mb-4 ">最新消息</h2>
+                <h3 class="text-white mb-4 "></h3>
                 <!-- 指示符 -->
                 <ul class="carousel-indicators">
                     <li data-target="#news" data-slide-to="0" class="active"></li>
@@ -33,24 +33,24 @@
                 <!-- 輪播圖片 -->
                 <div class="carousel-inner" >
                     <div class="carousel-item active">
-                        <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
+                        <img src="{{asset("img/News20125154.jpg")}}">
                         <div class="carousel-caption">
-                            <h3>第一張圖片描述標題</h3>
-                            <p>描述文字!</p>
+                            <h3 style="color: #ea0300" class="font-weight-bold">2012/01/07 茶與生活</h3>
+                            <p class="text-dark">輕鬆泡好茶｜免費講座</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{asset("img/sweet.png")}}">
+                        <img src="{{asset("img/News127.jpg")}}">
                         <div class="carousel-caption">
-                            <h3>第二張圖片描述標題</h3>
-                            <p>描述文字!</p>
+                            <h3 style="color: #eae46a" class="font-weight-bold">2012/01/02 春節時間公告</h3>
+                            <p>調整咖啡豆訂購出貨及收單日</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{asset("img/cup.jpg")}}">
+                        <img src="{{asset("img/News170.jpg")}}">
                         <div class="carousel-caption">
-                            <h3>第三章圖片描述標題</h3>
-                            <p>描述文字!</p>
+                            <h3 style="color: #0604ea" class="font-weight-bold">2019/12/23 聖誕好禮</h3>
+                            <p style="color: #00eaea">消費滿千 現折$100</p>
                         </div>
                     </div>
                 </div>
@@ -75,12 +75,11 @@
         <!-- Featured Project Row -->
         <div class="row align-items-center no-gutters mb-4 mb-lg-5">
             <div class="col-xl-8 col-lg-7">
-                <img class="img-fluid mb-3 mb-lg-0 float-right" src="{{asset("img/焦糖瑪奇朵.jpg")}}" alt="">
+                <img class="img-fluid mb-3 mb-lg-0 float-right" src="{{asset("img/1512398829-0f8ac971b151c8311b824e70e00c0db6.jpg")}}" alt="">
             </div>
             <div class="col-xl-4 col-lg-5">
                 <div class="featured-text text-center text-white text-lg-left">
                     <h4 >熱門產品</h4>
-                    <p class="text-white-50 mb-0 ">焦糖瑪奇朵</p>
                 </div>
             </div>
         </div>

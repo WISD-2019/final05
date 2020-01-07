@@ -144,8 +144,8 @@
                         <tr style="font-family: 幼圆">
                             <th style="text-align: center">提拉米蘇</th>
                             <th style="text-align: center">巧克力塔</th>
-                            <th style="text-align: center">生巧克力</th>
                             <th style="text-align: center">蒙布朗</th>
+                            <th style="text-align: center">黑糖波士頓</th>
                         </tr>
                         <tr>
                             <td>
@@ -155,38 +155,25 @@
                                 <img class="img-fluid align-content-center" src="{{asset("img/巧克力塔.jpg")}}" alt="">
                             </td>
                             <td>
-                                <img class="img-fluid align-content-center" src="{{asset("img/生巧克力.jpg")}}" alt="">
-                            </td>
-                            <td>
                                 <img class="img-fluid align-content-center" src="{{asset("img/蒙布朗.jpg")}}" alt="">
                             </td>
-                        </tr>
-                        <tr style="font-family: 幼圆">
-                            <th style="text-align: center">價格：$120</th>
-                            <th style="text-align: center">價格：$130</th>
-                            <th style="text-align: center">價格：$140</th>
-                            <th style="text-align: center">價格：$160</th>
-                        </tr>
-                        </thead>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <thead>
-                        <tr style="font-family: 幼圆">
-                            <th style="text-align: center">黑糖波士頓</th>
-                        </tr>
-                        <tr>
                             <td>
                                 <img class="img-fluid align-content-center" src="{{asset("img/黑糖波士頓.jpg")}}" alt="">
                             </td>
                         </tr>
                         <tr style="font-family: 幼圆">
+                            <th style="text-align: center">價格：$120</th>
+                            <th style="text-align: center">價格：$130</th>
+                            <th style="text-align: center">價格：$160</th>
                             <th style="text-align: center">價格：$180</th>
                         </tr>
                         </thead>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                     </table>
                 </div>
             </div>
