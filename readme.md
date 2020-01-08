@@ -46,6 +46,7 @@
 - 咖啡產品介紹 [3A632065 蔡欣如](https://github.com/3A632065)
 - 其他產品介紹 [3A632065 蔡欣如](https://github.com/3A632065)
 - 聯絡我們 [3A632065 蔡欣如](https://github.com/3A632065)
+
     - Route::get('/', function () {return view('coffee');});
     - Auth::routes();
     - /*首頁*/
