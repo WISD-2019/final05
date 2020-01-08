@@ -1,6 +1,6 @@
 # 系統擷取畫面
 ## 首頁
-- 瀏覽相關的店家簡介、活動公告、產品介紹、聯絡資訊
+- 瀏覽相關的店家簡介、活動公告、產品介紹、聯絡資訊，以及註冊會員與登入
 ![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E9%A6%96%E9%A0%81.png)
 ## 訂餐之頁面
 - 提供會員查看訂餐狀況以及新增、編輯和刪除訂餐資料
