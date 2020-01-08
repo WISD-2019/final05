@@ -1,13 +1,13 @@
 # 系統擷取畫面
 ## 首頁
-- 瀏覽相關的店家簡介、活動公告、產品介紹、聯絡資訊
+- 瀏覽相關的店家簡介、活動公告、產品介紹、聯絡資訊，以及註冊會員與登入
 ![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E9%A6%96%E9%A0%81.png)
-## 產品介紹之頁面
-- 顯示所有販賣之產品供顧客查看與購買
-![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E7%94%A2%E5%93%81%E4%BB%8B%E7%B4%B9.png)
 ## 訂餐之頁面
 - 提供會員查看訂餐狀況以及新增、編輯和刪除訂餐資料
 ![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E6%88%91%E7%9A%84%E8%A8%82%E9%A4%90.png)
+## 新增訂餐之頁面
+- 提供會員新增訂餐的資料(產品名稱、數量和備註)
+![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E6%96%B0%E5%A2%9E%E8%A8%82%E9%A4%90.png)
 ## 新增訂位之頁面
 - 提供會員新增訂位的資料(包括預定日期、預定時間、訂位人數和備註)
 ![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/%E6%96%B0%E5%A2%9E%E8%A8%82%E4%BD%8D.png)
