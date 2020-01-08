@@ -22,7 +22,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto mb-4" style="font-family: 微軟正黑體">
-                <h3 class="text-white mb-4 "></h3>
+                <h3 class="text-white mb-4 ">最新消息</h3>
+
                 <!-- 指示符 -->
                 <ul class="carousel-indicators">
                     <li data-target="#news" data-slide-to="0" class="active"></li>

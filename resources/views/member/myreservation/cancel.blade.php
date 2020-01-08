@@ -60,7 +60,7 @@
                     </tbody>
                 </table>
                 <div class="text-right">
-                    <form action="{{ route('member.myreservation.destroy', $reservations->id) }}" method="POST">
+                    <form action="/myreservation/{{$reservation->id}}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
                         <button type="submit" class="btn btn-danger ">刪除</button>
