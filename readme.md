@@ -214,7 +214,7 @@
  - 產品
 ![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/products%E8%B3%87%E6%96%99%E6%AC%84%E4%BD%8D%E8%A8%AD%E8%A8%88.jpg)
  - 訂餐
-![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/orders%E8%B3%87%E6%96%99%E6%AC%84%E4%BD%8D%E8%A8%AD%E8%A8%88.jpg)
+![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/reservations%E8%B3%87%E6%96%99%E6%AC%84%E4%BD%8D%E8%A8%AD%E8%A8%88.jpg)
  - 訂餐明細
 ![image](https://raw.githubusercontent.com/WISD-2019/final05/master/readme_picture/items%E8%B3%87%E6%96%99%E6%AC%84%E4%BD%8D%E8%A8%AD%E8%A8%88.jpg)
  - 訂位
