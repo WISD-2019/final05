@@ -8,7 +8,7 @@
     <header class="masthead" style="background-image: url('{{asset('img/tw_about_list_18k02_yq873zwn24.jpg')}}')">
         <div class="container d-flex h-100 align-items-center" >
             <div class="mx-auto text-center" >
-                <h3 class="display-1 mx-auto my-0 text-white" style="font-family: 微軟正黑體"> 我的訂餐 </h3>
+                <h3 class="display-1 mx-auto my-0 text-white" style="font-family: 微軟正黑體"> 我的訂位 </h3>
             </div>
         </div>
     </header>
@@ -28,7 +28,7 @@
         <div class="col-lg-1 " style="background: #290e05">
         </div>
         <div class="col-lg-10 mb-5">
-            <h1 class="page-header text-primary" style="font-family: 幼圆">刪除訂餐</h1>
+            <h1 class="page-header text-primary" style="font-family: 幼圆">刪除訂位</h1>
         </div>
         <div class="col-lg-1 " style="background: #290e05">
         </div>
